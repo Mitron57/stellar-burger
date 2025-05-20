@@ -49,6 +49,7 @@ export const RegisterUI: FC<RegisterUIProps> = ({
               error={false}
               errorText=''
               size={'default'}
+              // @ts-ignore
             />
           </div>
           <div className='pb-6'>

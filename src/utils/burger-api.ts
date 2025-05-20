@@ -1,3 +1,4 @@
+import { ServerResponse } from 'http';
 import { setCookie, getCookie } from './cookie';
 import { TIngredient, TOrder, TOrdersData, TUser } from './types';
 

@@ -11,7 +11,7 @@ import {
 } from '@api';
 import type { TRegisterData, TLoginData } from '@api';
 import { TUser } from '@utils-types';
-import { deleteCookie, setCookie } from '../../utils/cookie';
+import { deleteCookie, setCookie } from '../utils/cookie';
 
 export interface UserState {
   isLoadong: boolean;

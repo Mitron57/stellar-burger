@@ -3,14 +3,88 @@ import { storeCookie, retrieveCookie } from './cookie';
 
 const API_BASE_URL = process.env.BURGER_API_URL;
 
-const checkResponse = <T>(response: Response): Promise<T> => {
+type TApiResponse<T> = T & { success: boolean };
+type TApiError = { message: string };
+type TRequestOptions = RequestInit;
+
+type TTokenRefreshResponse = TApiResponse<{
+  refreshToken: string;
+  accessToken: string;
+}>;
+
+type TMenuItemsResponse = TApiResponse<{
+  data: TIngredient[];
+}>;
+
+type TOrdersStreamResponse = TApiResponse<{
+  orders: TOrder[];
+  total: number;
+  totalToday: number;
+}>;
+
+type TOrderSubmissionResponse = TApiResponse<{
+  order: TOrder;
+  name: string;
+}>;
+
+type TOrderDetailsResponse = TApiResponse<{
+  orders: TOrder[];
+}>;
+
+type TAccountRegistration = {
+  email: string;
+  name: string;
+  password: string;
+};
+
+type TAuthenticationResponse = TApiResponse<{
+  refreshToken: string;
+  accessToken: string;
+  user: TUser;
+}>;
+
+type TAccountResponse = TApiResponse<{
+  user: TUser;
+}>;
+
+type TPasswordResetRequest = {
+  email: string;
+};
+
+type TPasswordResetConfirm = {
+  password: string;
+  token: string;
+};
+
+type TAccountCredentials = {
+  email: string;
+  password: string;
+};
+
+// экспортируем типы, чтобы мы могли использовать это как контракты к нашему API
+export type {
+  TAccountRegistration,
+  TAccountResponse,
+  TAccountCredentials,
+  TApiResponse,
+  TAuthenticationResponse,
+  TMenuItemsResponse,
+  TOrderDetailsResponse,
+  TOrderSubmissionResponse,
+  TOrdersStreamResponse,
+  TPasswordResetConfirm,
+  TPasswordResetRequest,
+  TTokenRefreshResponse
+};
+
+const checkResponse = <T>(response: Response): Promise<TApiResponse<T>> => {
   if (response.ok) {
     return response.json();
   }
   return response.json().then((error) => Promise.reject(error));
 };
 
-const checkSuccess = <T>(data: T & { success: boolean }): Promise<T> => {
+const checkSuccess = <T>(data: TApiResponse<T>): Promise<T> => {
   if (data?.success) {
     return Promise.resolve(data);
   }
@@ -19,16 +93,16 @@ const checkSuccess = <T>(data: T & { success: boolean }): Promise<T> => {
 
 const request = async <T>(
   endpoint: string,
-  options: RequestInit = {}
+  options: TRequestOptions = {}
 ): Promise<T> => {
   const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
-  const data = await checkResponse<T & { success: boolean }>(response);
+  const data = await checkResponse<T>(response);
   return checkSuccess(data);
 };
 
 const requestWithTokenRenewal = async <T>(
   endpoint: string,
-  options: RequestInit = {}
+  options: TRequestOptions = {}
 ): Promise<T> => {
   try {
     return await request<T>(endpoint, {
@@ -39,7 +113,7 @@ const requestWithTokenRenewal = async <T>(
       } as HeadersInit
     });
   } catch (error) {
-    if ((error as { message: string }).message === 'jwt expired') {
+    if ((error as TApiError).message === 'jwt expired') {
       const tokenData = await renewAccessToken();
       return request<T>(endpoint, {
         ...options,
@@ -51,12 +125,6 @@ const requestWithTokenRenewal = async <T>(
     }
     return Promise.reject(error);
   }
-};
-
-type TTokenRefreshResponse = {
-  success: boolean;
-  refreshToken: string;
-  accessToken: string;
 };
 
 export const renewAccessToken = (): Promise<TTokenRefreshResponse> =>
@@ -74,20 +142,8 @@ export const renewAccessToken = (): Promise<TTokenRefreshResponse> =>
     return tokenData;
   });
 
-type TMenuItemsResponse = {
-  success: boolean;
-  data: TIngredient[];
-};
-
 export const fetchMenuItemsApi = () =>
   request<TMenuItemsResponse>('/ingredients').then((data) => data.data);
-
-type TOrdersStreamResponse = {
-  success: boolean;
-  orders: TOrder[];
-  total: number;
-  totalToday: number;
-};
 
 export const fetchOrdersStreamApi = () =>
   request<TOrdersStreamResponse>('/orders/all');
@@ -96,12 +152,6 @@ export const fetchUserOrdersApi = () =>
   requestWithTokenRenewal<TOrdersStreamResponse>('/orders').then(
     (data) => data.orders
   );
-
-type TOrderSubmissionResponse = {
-  success: boolean;
-  order: TOrder;
-  name: string;
-};
 
 export const submitOrderApi = (itemIds: string[]) =>
   requestWithTokenRenewal<TOrderSubmissionResponse>('/orders', {
@@ -114,26 +164,8 @@ export const submitOrderApi = (itemIds: string[]) =>
     })
   });
 
-type TOrderDetailsResponse = {
-  success: boolean;
-  orders: TOrder[];
-};
-
 export const fetchOrderByIdApi = (orderNumber: number) =>
   request<TOrderDetailsResponse>(`/orders/${orderNumber}`);
-
-export type TAccountRegistration = {
-  email: string;
-  name: string;
-  password: string;
-};
-
-type TAuthenticationResponse = {
-  success: boolean;
-  refreshToken: string;
-  accessToken: string;
-  user: TUser;
-};
 
 export const createAccountApi = (registrationData: TAccountRegistration) =>
   request<TAuthenticationResponse>('/auth/register', {
@@ -143,11 +175,6 @@ export const createAccountApi = (registrationData: TAccountRegistration) =>
     },
     body: JSON.stringify(registrationData)
   });
-
-export type TAccountCredentials = {
-  email: string;
-  password: string;
-};
 
 export const authenticateApi = (credentials: TAccountCredentials) =>
   request<TAuthenticationResponse>('/auth/login', {
@@ -159,7 +186,7 @@ export const authenticateApi = (credentials: TAccountCredentials) =>
   });
 
 export const requestPasswordResetApi = (emailData: { email: string }) =>
-  request<{ success: boolean }>('/password-reset', {
+  request<TApiResponse<{}>>('/password-reset', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -171,18 +198,13 @@ export const confirmPasswordResetApi = (resetData: {
   password: string;
   token: string;
 }) =>
-  request<{ success: boolean }>('/password-reset/reset', {
+  request<TApiResponse<{}>>('/password-reset/reset', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(resetData)
   });
-
-type TAccountResponse = {
-  success: boolean;
-  user: TUser;
-};
 
 export const fetchAccountApi = () =>
   requestWithTokenRenewal<TAccountResponse>('/auth/user');
@@ -197,7 +219,7 @@ export const modifyAccountApi = (userData: Partial<TAccountRegistration>) =>
   });
 
 export const signOutApi = () =>
-  request<{ success: boolean }>('/auth/logout', {
+  request<TApiResponse<{}>>('/auth/logout', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'

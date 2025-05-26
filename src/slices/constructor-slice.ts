@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
 import { TConstructorIngredient, TOrder } from '@utils-types';
-import { orderBurgerApi } from '@api';
+import { submitOrderApi } from '../utils/burger-api';
 
 export interface constructorState {
   isLoading: boolean;
@@ -26,7 +26,7 @@ const initialState: constructorState = {
 
 export const sendOrderThunk = createAsyncThunk(
   'constructorbg/sendOrder',
-  (data: string[]) => orderBurgerApi(data)
+  (data: string[]) => submitOrderApi(data)
 );
 
 const constructorSlice = createSlice({

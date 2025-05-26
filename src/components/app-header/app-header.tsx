@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { AppHeaderUI } from '@ui';
-import { useSelector } from '@store';
-import { getUserSelector } from '@slices';
+import { useAppSelector } from '@store';
+import { getCurrentUserInfo } from '@slices';
 
 export const AppHeader: FC = () => {
-  const userName = useSelector(getUserSelector)?.name;
-  return <AppHeaderUI userName={userName} />;
+  const currentUser = useAppSelector(getCurrentUserInfo);
+  const displayName = currentUser?.name;
+  return <AppHeaderUI userName={displayName} />;
 };

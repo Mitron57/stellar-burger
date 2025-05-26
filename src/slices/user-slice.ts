@@ -1,17 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {
-  registerUserApi,
-  loginUserApi,
-  getUserApi,
-  updateUserApi,
-  logoutApi,
-  refreshToken,
-  forgotPasswordApi,
-  resetPasswordApi
-} from '@api';
-import type { TRegisterData, TLoginData } from '@api';
-import { TUser } from '@utils-types';
-import { deleteCookie, setCookie } from '../utils/cookie';
+  createAccountApi,
+  authenticateApi,
+  fetchAccountApi,
+  modifyAccountApi,
+  signOutApi,
+  requestPasswordResetApi,
+  confirmPasswordResetApi,
+  TAccountCredentials,
+  TAccountRegistration
+} from '../utils/burger-api';
+import type { TUser } from '../utils/types';
+import { removeCookie, storeCookie } from '../utils/cookie';
 
 export interface UserState {
   isLoadong: boolean;
@@ -29,32 +29,35 @@ const initialState: UserState = {
 
 export const loginUserThunk = createAsyncThunk(
   'user/login',
-  (loginData: TLoginData) => loginUserApi(loginData)
+  (loginData: TAccountCredentials) => authenticateApi(loginData)
 );
 
 export const registerUserThunk = createAsyncThunk(
   'user/register',
-  (registerData: TRegisterData) => registerUserApi(registerData)
+  (registerData: TAccountRegistration) => createAccountApi(registerData)
 );
 
-export const logoutUserThunk = createAsyncThunk('user/logout', logoutApi);
+export const logoutUserThunk = createAsyncThunk('user/logout', signOutApi);
 
 export const updateUserThunk = createAsyncThunk(
   'user/update',
-  (user: Partial<TRegisterData>) => updateUserApi(user)
+  (user: Partial<TAccountRegistration>) => modifyAccountApi(user)
 );
 
 export const forgotPasswordThunk = createAsyncThunk(
   'user/frogotPassword',
-  (data: { email: string }) => forgotPasswordApi(data)
+  (data: { email: string }) => requestPasswordResetApi(data)
 );
 
 export const resetPasswordThunk = createAsyncThunk(
   'user/resetPassword',
-  (data: { password: string; token: string }) => resetPasswordApi(data)
+  (data: { password: string; token: string }) => confirmPasswordResetApi(data)
 );
 
-export const getUserThunk = createAsyncThunk('user/get', getUserApi);
+export const getUserThunk = createAsyncThunk<{ user: TUser }>(
+  'user/get',
+  fetchAccountApi
+);
 
 export const userSlice = createSlice({
   name: 'user',
@@ -85,7 +88,7 @@ export const userSlice = createSlice({
         state.error = null;
         state.user = payload.user;
         state.isAuthorized = true;
-        setCookie('accessToken', payload.accessToken);
+        storeCookie('accessToken', payload.accessToken);
         localStorage.setItem('refreshToken', payload.refreshToken);
       })
       .addCase(registerUserThunk.pending, (state) => {
@@ -101,7 +104,7 @@ export const userSlice = createSlice({
         state.error = null;
         state.user = payload.user;
         state.isAuthorized = true;
-        setCookie('accessToken', payload.accessToken);
+        storeCookie('accessToken', payload.accessToken);
         localStorage.setItem('refreshToken', payload.refreshToken);
       })
       .addCase(logoutUserThunk.pending, (state) => {
@@ -117,7 +120,7 @@ export const userSlice = createSlice({
         state.error = null;
         state.user = null;
         state.isAuthorized = false;
-        deleteCookie('accessToken');
+        removeCookie('accessToken');
         localStorage.removeItem('refreshToken');
       })
       .addCase(updateUserThunk.pending, (state) => {

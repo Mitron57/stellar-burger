@@ -1,6 +1,6 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useSelector } from '@store';
-import { isAuthorizedSelector } from '@slices';
+import { useAppSelector } from '@store';
+import { checkAccessStatus } from '@slices';
 
 type ProtectedRouteProps = {
   forAuthorized: boolean;
@@ -9,16 +9,16 @@ type ProtectedRouteProps = {
 export const ProtectedRoute = ({
   forAuthorized = false
 }: ProtectedRouteProps) => {
-  const location = useLocation();
-  const isAuthorized = useSelector(isAuthorizedSelector);
-  const from = location.state?.from || '/';
+  const currentLocation = useLocation();
+  const hasUserAccess = useAppSelector(checkAccessStatus);
+  const redirectPath = currentLocation.state?.from || '/';
 
-  if (!forAuthorized && isAuthorized) {
-    return <Navigate to={from} />;
+  if (!forAuthorized && hasUserAccess) {
+    return <Navigate to={redirectPath} />;
   }
 
-  if (forAuthorized && !isAuthorized) {
-    return <Navigate to='/login' state={{ from: location }} />;
+  if (forAuthorized && !hasUserAccess) {
+    return <Navigate to='/login' state={{ from: currentLocation }} />;
   }
 
   return <Outlet />;

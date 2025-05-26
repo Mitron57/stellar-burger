@@ -1,39 +1,47 @@
-import { FC, SyntheticEvent, useState, useEffect } from 'react';
+'use client';
+
+import { type FC, type SyntheticEvent, useState, useEffect } from 'react';
 import { RegisterUI } from '@ui-pages';
-import { useDispatch, useSelector } from '@store';
+import { useAppDispatch, useAppSelector } from '@store';
 import {
-  clearUserError,
-  registerUserThunk,
-  getUserErrorSelector
+  resetErrorMessage,
+  createAccountAction,
+  getAccountError
 } from '@slices';
 
 export const Register: FC = () => {
-  const dispatch = useDispatch();
-  const error = useSelector(getUserErrorSelector);
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const dispatcher = useAppDispatch();
+  const errorMessage = useAppSelector(getAccountError);
+  const [userNameInput, setUserNameInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
 
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    const name = userName;
-    dispatch(registerUserThunk({ email, name, password }));
+  const handleFormSubmission = (event: SyntheticEvent) => {
+    event.preventDefault();
+    const userName = userNameInput;
+    dispatcher(
+      createAccountAction({
+        email: emailInput,
+        name: userName,
+        password: passwordInput
+      })
+    );
   };
 
   useEffect(() => {
-    dispatch(clearUserError());
+    dispatcher(resetErrorMessage());
   });
 
   return (
     <RegisterUI
-      errorText={error?.toString()}
-      email={email}
-      userName={userName}
-      password={password}
-      setEmail={setEmail}
-      setPassword={setPassword}
-      setUserName={setUserName}
-      handleSubmit={handleSubmit}
+      errorText={errorMessage?.toString()}
+      email={emailInput}
+      userName={userNameInput}
+      password={passwordInput}
+      setEmail={setEmailInput}
+      setPassword={setPasswordInput}
+      setUserName={setUserNameInput}
+      handleSubmit={handleFormSubmission}
     />
   );
 };

@@ -1,16 +1,16 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ProfileMenuUI } from '@ui';
-import { useDispatch } from '@store';
-import { logoutUserThunk } from '@slices';
+import { useAppDispatch } from '@store';
+import { signOutAction } from '@slices';
 
 export const ProfileMenu: FC = () => {
-  const dispatch = useDispatch();
+  const dispatcher = useAppDispatch();
   const { pathname } = useLocation();
 
-  const handleLogout = () => {
-    dispatch(logoutUserThunk());
+  const handleUserSignOut = () => {
+    dispatcher(signOutAction());
   };
 
-  return <ProfileMenuUI handleLogout={handleLogout} pathname={pathname} />;
+  return <ProfileMenuUI handleLogout={handleUserSignOut} pathname={pathname} />;
 };

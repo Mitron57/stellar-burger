@@ -1,52 +1,54 @@
-import { FC, SyntheticEvent, useEffect, useState } from 'react';
+'use client';
+
+import { type FC, type SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ResetPasswordUI } from '@ui-pages';
 
-import { useSelector, useDispatch } from '@store';
+import { useAppSelector, useAppDispatch } from '@store';
 import {
-  resetPasswordThunk,
-  getUserErrorSelector,
-  clearUserError
+  confirmPasswordResetAction,
+  getAccountError,
+  resetErrorMessage
 } from '@slices';
 
 export const ResetPassword: FC = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
-  const error = useSelector(getUserErrorSelector) as string;
+  const navigator = useNavigate();
+  const dispatcher = useAppDispatch();
+  const [passwordInput, setPasswordInput] = useState('');
+  const [tokenInput, setTokenInput] = useState('');
+  const errorMessage = useAppSelector(getAccountError) as string;
 
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    dispatch(resetPasswordThunk({ password: password, token: token })).then(
-      (data) => {
-        if (data.payload) {
-          localStorage.removeItem('resetPassword');
-          navigate('/login');
-        }
+  const handleFormSubmission = (event: SyntheticEvent) => {
+    event.preventDefault();
+    dispatcher(
+      confirmPasswordResetAction({ password: passwordInput, token: tokenInput })
+    ).then((result) => {
+      if (result.payload) {
+        localStorage.removeItem('resetPassword');
+        navigator('/login');
       }
-    );
+    });
   };
 
   useEffect(() => {
-    dispatch(clearUserError());
-  }, [dispatch]);
+    dispatcher(resetErrorMessage());
+  }, [dispatcher]);
 
   useEffect(() => {
     if (!localStorage.getItem('resetPassword')) {
-      navigate('/forgot-password', { replace: true });
+      navigator('/forgot-password', { replace: true });
     }
-  }, [navigate]);
+  }, [navigator]);
 
   return (
     <ResetPasswordUI
-      errorText={error}
-      password={password}
-      token={token}
-      setPassword={setPassword}
-      setToken={setToken}
-      handleSubmit={handleSubmit}
+      errorText={errorMessage}
+      password={passwordInput}
+      token={tokenInput}
+      setPassword={setPasswordInput}
+      setToken={setTokenInput}
+      handleSubmit={handleFormSubmission}
     />
   );
 };

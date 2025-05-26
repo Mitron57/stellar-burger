@@ -1,21 +1,21 @@
-import { FC, useEffect } from 'react';
+'use client';
+
+import type { FC } from 'react';
 import { Preloader } from '../ui/preloader';
 import { IngredientDetailsUI } from '../ui/ingredient-details';
-import { useSelector } from '@store';
-import { getIngredientsSelector } from '@slices';
+import { useAppSelector } from '@store';
+import { getAvailableMenuItems } from '@slices';
 import { useParams } from 'react-router-dom';
 
 export const IngredientDetails: FC = () => {
-  const ingridientId = useParams().id;
+  const itemId = useParams().id;
 
-  const ingredients = useSelector(getIngredientsSelector);
-  const ingredientData = ingredients.find(
-    (ingredient) => ingredient._id === ingridientId
-  );
+  const availableItems = useAppSelector(getAvailableMenuItems);
+  const selectedItem = availableItems.find((item) => item._id === itemId);
 
-  if (!ingredientData) {
+  if (!selectedItem) {
     return <Preloader />;
   }
 
-  return <IngredientDetailsUI ingredientData={ingredientData} />;
+  return <IngredientDetailsUI ingredientData={selectedItem} />;
 };

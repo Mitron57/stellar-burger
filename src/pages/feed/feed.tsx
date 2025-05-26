@@ -1,25 +1,27 @@
+'use client';
+
 import { Preloader } from '@ui';
 import { FeedUI } from '@ui-pages';
-import { TOrder } from '@utils-types';
-import { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from '@store';
-import { getFeedThunk, getOrdersSelector } from '@slices';
+import type { TOrder } from '@utils-types';
+import { type FC, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '@store';
+import { loadOrdersStreamAction, getOrdersListData } from '@slices';
 
 export const Feed: FC = () => {
-  const dispatch = useDispatch();
-  const orders: TOrder[] = useSelector(getOrdersSelector);
+  const dispatcher = useAppDispatch();
+  const ordersList: TOrder[] = useAppSelector(getOrdersListData);
 
-  const handleGetFeeds = () => {
-    dispatch(getFeedThunk());
+  const handleStreamRefresh = () => {
+    dispatcher(loadOrdersStreamAction());
   };
 
   useEffect(() => {
-    handleGetFeeds();
-  }, [dispatch]);
+    handleStreamRefresh();
+  }, [dispatcher]);
 
-  if (!orders.length) {
+  if (!ordersList.length) {
     return <Preloader />;
   }
 
-  return <FeedUI orders={orders} handleGetFeeds={handleGetFeeds} />;
+  return <FeedUI orders={ordersList} handleGetFeeds={handleStreamRefresh} />;
 };

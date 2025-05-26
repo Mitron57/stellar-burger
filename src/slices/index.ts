@@ -3,3 +3,8 @@ export * from './feed-slice';
 export * from './ingredients-slice';
 export * from './constructor-slice';
 export * from './order-slice';
+export * from './account-slice';
+export * from './orders-stream-slice';
+export * from './menu-items-slice';
+export * from './builder-slice';
+export * from './order-details-slice';

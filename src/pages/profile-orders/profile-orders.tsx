@@ -1,16 +1,18 @@
+'use client';
+
 import { ProfileOrdersUI } from '@ui-pages';
-import { TOrder } from '@utils-types';
-import { FC, useEffect } from 'react';
-import { useSelector, useDispatch } from '@store';
-import { getOrdersSelector, getOrdersThunk } from '@slices';
+import type { TOrder } from '@utils-types';
+import { type FC, useEffect } from 'react';
+import { useAppSelector, useAppDispatch } from '@store';
+import { getOrdersListData, loadUserOrdersAction } from '@slices';
 
 export const ProfileOrders: FC = () => {
-  const dispatch = useDispatch();
-  const orders: TOrder[] = useSelector(getOrdersSelector);
+  const dispatcher = useAppDispatch();
+  const userOrdersList: TOrder[] = useAppSelector(getOrdersListData);
 
   useEffect(() => {
-    dispatch(getOrdersThunk());
-  }, [dispatch]);
+    dispatcher(loadUserOrdersAction());
+  }, [dispatcher]);
 
-  return <ProfileOrdersUI orders={orders} />;
+  return <ProfileOrdersUI orders={userOrdersList} />;
 };

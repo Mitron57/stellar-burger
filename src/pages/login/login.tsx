@@ -1,33 +1,37 @@
-import { FC, SyntheticEvent, useState, useEffect } from 'react';
+'use client';
+
+import { type FC, type SyntheticEvent, useState, useEffect } from 'react';
 import { LoginUI } from '@ui-pages';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from '@store';
-import { loginUserThunk, clearUserError } from '@slices';
+import { useAppDispatch, useAppSelector } from '@store';
+import { authenticateUserAction, resetErrorMessage } from '@slices';
 
 export const Login: FC = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const error = useSelector((state) => state.user.error);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const dispatcher = useAppDispatch();
+  const navigator = useNavigate();
+  const errorMessage = useAppSelector((state) => state.account.errorMessage);
+  const [emailInput, setEmailInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
 
   useEffect(() => {
-    dispatch(clearUserError());
+    dispatcher(resetErrorMessage());
   });
 
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    dispatch(loginUserThunk({ email, password }));
+  const handleFormSubmission = (event: SyntheticEvent) => {
+    event.preventDefault();
+    dispatcher(
+      authenticateUserAction({ email: emailInput, password: passwordInput })
+    );
   };
 
   return (
     <LoginUI
-      errorText={error?.toString()}
-      email={email}
-      setEmail={setEmail}
-      password={password}
-      setPassword={setPassword}
-      handleSubmit={handleSubmit}
+      errorText={errorMessage?.toString()}
+      email={emailInput}
+      setEmail={setEmailInput}
+      password={passwordInput}
+      setPassword={setPasswordInput}
+      handleSubmit={handleFormSubmission}
     />
   );
 };

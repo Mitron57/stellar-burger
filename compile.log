@@ -1,0 +1,1278 @@
+
+> react-canonical@0.1.0 start
+> webpack serve --mode=development
+
+assets by info 324 KiB [immutable]
+  assets by path *.woff 146 KiB
+    asset 3914674f1cb2335acf26.woff 64.2 KiB [emitted] [immutable] [from: node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/JetBrainsMono-Bold.woff] (auxiliary name: main)
+    asset f52bee61d00ce995b89f.woff 62.9 KiB [emitted] [immutable] [from: node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/JetBrainsMono-Regular.woff] (auxiliary name: main)
+    asset 77ad7fc2baffd9305538.woff 19 KiB [emitted] [immutable] [from: node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/iceland.woff] (auxiliary name: main)
+  assets by path *.woff2 115 KiB
+    asset c232d532ea5a5189a278.woff2 50.9 KiB [emitted] [immutable] [from: node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/JetBrainsMono-Bold.woff2] (auxiliary name: main)
+    asset b60380891bcf2eb241ca.woff2 49.6 KiB [emitted] [immutable] [from: node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/JetBrainsMono-Regular.woff2] (auxiliary name: main)
+    asset 4ae67a017a5ff82bbbb7.woff2 15 KiB [emitted] [immutable] [from: node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/iceland.woff2] (auxiliary name: main)
+  asset 85c3a14da4759ed44774.svg 62.7 KiB [emitted] [immutable] [from: src/images/done.svg] (auxiliary name: main)
+asset bundle.js 2.91 MiB [emitted] (name: main)
+asset index.html 466 bytes [emitted]
+runtime modules 28.7 KiB 15 modules
+modules by path ./node_modules/ 1.98 MiB (javascript) 262 KiB (asset)
+  javascript modules 1.98 MiB 224 modules
+  asset modules 252 bytes (javascript) 262 KiB (asset)
+    modules by path ./node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/*.woff2 126 bytes (javascript) 115 KiB (asset) 3 modules
+    modules by path ./node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/*.woff 126 bytes (javascript) 146 KiB (asset)
+      ./node_modules/@zlden/react-developer-burger-ui-components/dist/ui/fonts/JetBrai...(truncated) 42 bytes (javascript) 62.9 KiB (asset) [built] [code generated]
+      + 2 modules
+modules by path ./src/ 204 KiB (javascript) 62.7 KiB (asset)
+  modules by path ./src/components/ 143 KiB 134 modules
+  modules by path ./src/pages/ 13.8 KiB 21 modules
+  modules with errors 41.4 KiB [errors] 11 modules
+  modules by path ./src/*.css 2.68 KiB 2 modules
+  + 5 modules
+
+WARNING in ./src/slices/user-slice.ts 49:12-21
+export 'setCookie' (imported as 'setCookie') was not found in '../utils/cookie' (possible exports: removeCookie, retrieveCookie, storeCookie)
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+WARNING in ./src/slices/user-slice.ts 67:12-21
+export 'setCookie' (imported as 'setCookie') was not found in '../utils/cookie' (possible exports: removeCookie, retrieveCookie, storeCookie)
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+WARNING in ./src/slices/user-slice.ts 85:12-24
+export 'deleteCookie' (imported as 'deleteCookie') was not found in '../utils/cookie' (possible exports: removeCookie, retrieveCookie, storeCookie)
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+WARNING in [eslint] 
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/app-header/app-header.tsx
+   1:25  warning  Replace `"react"` with `'react';`      prettier/prettier
+   2:29  warning  Replace `"@ui"` with `'@ui';`          prettier/prettier
+   3:32  warning  Replace `"@store"` with `'@store';`    prettier/prettier
+   4:36  warning  Replace `"@slices"` with `'@slices';`  prettier/prettier
+   7:57  warning  Insert `;`                             prettier/prettier
+   8:40  warning  Insert `;`                             prettier/prettier
+   9:48  warning  Insert `;`                             prettier/prettier
+  10:2   warning  Insert `;`                             prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/app/app.tsx
+    1:57  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                                                                  prettier/prettier
+   11:16  warning  Delete `,`                                                                                                                                                                                                               prettier/prettier
+   12:8   warning  Replace `"@pages"` with `'@pages';`                                                                                                                                                                                      prettier/prettier
+   13:8   warning  Replace `"../../index.css"` with `'../../index.css';`                                                                                                                                                                    prettier/prettier
+   14:20  warning  Replace `"./app.module.css"` with `'./app.module.css';`                                                                                                                                                                  prettier/prettier
+   15:9   warning  Replace `·AppHeader,·Modal,·OrderInfo,·IngredientDetails,·ProtectedRoute,·Center·}·from·"@components"` with `⏎··AppHeader,⏎··Modal,⏎··OrderInfo,⏎··IngredientDetails,⏎··ProtectedRoute,⏎··Center⏎}·from·'@components';`  prettier/prettier
+   16:32  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                                      prettier/prettier
+   17:9   warning  Replace `·loadMenuItemsAction,·getAccountStateInfo,·fetchAccountAction·}·from·"@slices"` with `⏎··loadMenuItemsAction,⏎··getAccountStateInfo,⏎··fetchAccountAction⏎}·from·'@slices';`                                    prettier/prettier
+   18:27  warning  Replace `"react"` with `'react';`                                                                                                                                                                                        prettier/prettier
+   19:32  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                                      prettier/prettier
+   22:34  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   23:40  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   24:38  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   25:77  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   26:63  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   29:37  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   30:38  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   31:19  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   37:21  warning  Replace `"/"` with `'/'`                                                                                                                                                                                                 prettier/prettier
+   37:21  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   39:16  warning  Replace `"/ingredients/:id"` with `'/ingredients/:id'`                                                                                                                                                                   prettier/prettier
+   39:16  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   46:21  warning  Replace `"/feed"` with `'/feed'`                                                                                                                                                                                         prettier/prettier
+   46:21  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   48:16  warning  Replace `"/feed/:number"` with `'/feed/:number'`                                                                                                                                                                         prettier/prettier
+   48:16  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   56:23  warning  Replace `"/login"` with `'/login'`                                                                                                                                                                                       prettier/prettier
+   56:23  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   57:23  warning  Replace `"/register"` with `'/register'`                                                                                                                                                                                 prettier/prettier
+   57:23  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   58:23  warning  Replace `"/forgot-password"` with `'/forgot-password'`                                                                                                                                                                   prettier/prettier
+   58:23  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   59:23  warning  Replace `"/reset-password"` with `'/reset-password'`                                                                                                                                                                     prettier/prettier
+   59:23  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   62:23  warning  Replace `"/profile"` with `'/profile'`                                                                                                                                                                                   prettier/prettier
+   62:23  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   64:25  warning  Replace `"orders"` with `'orders'`                                                                                                                                                                                       prettier/prettier
+   64:25  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   66:20  warning  Replace `"orders/:number"` with `'orders/:number'`                                                                                                                                                                       prettier/prettier
+   66:20  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   75:21  warning  Replace `"*"` with `'*'`                                                                                                                                                                                                 prettier/prettier
+   75:21  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   80:18  warning  Replace `"/feed/:number"` with `'/feed/:number'`                                                                                                                                                                         prettier/prettier
+   80:18  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   85:32  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+   93:18  warning  Replace `"/ingredients/:id"` with `'/ingredients/:id'`                                                                                                                                                                   prettier/prettier
+   93:18  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+   98:32  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+  107:20  warning  Replace `"/profile/orders/:number"` with `'/profile/orders/:number'`                                                                                                                                                     prettier/prettier
+  107:20  warning  Unexpected usage of doublequote                                                                                                                                                                                          jsx-quotes
+  112:31  warning  Replace `"/profile/orders")` with `'/profile/orders');`                                                                                                                                                                  prettier/prettier
+  123:4   warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+  124:2   warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+  126:19  warning  Insert `;`                                                                                                                                                                                                               prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/burger-constructor-element/burger-constructor-element.tsx
+   1:31  warning  Replace `"react"` with `'react';`                                                                          prettier/prettier
+   2:44  warning  Replace `"@ui"` with `'@ui';`                                                                              prettier/prettier
+   3:52  warning  Replace `"./type"` with `'./type';`                                                                        prettier/prettier
+   4:32  warning  Replace `"@store"` with `'@store';`                                                                        prettier/prettier
+   5:57  warning  Replace `"@slices"` with `'@slices';`                                                                      prettier/prettier
+   7:81  warning  Insert `⏎··`                                                                                               prettier/prettier
+   8:1   warning  Replace `··const·dispatcher·=·useAppDispatch()` with `····const·dispatcher·=·useAppDispatch();`            prettier/prettier
+  10:1   warning  Insert `··`                                                                                                prettier/prettier
+  11:1   warning  Replace `····dispatcher(shiftItemDown(index))` with `······dispatcher(shiftItemDown(index));`              prettier/prettier
+  12:1   warning  Replace `··}` with `····};`                                                                                prettier/prettier
+  14:1   warning  Replace `··` with `····`                                                                                   prettier/prettier
+  15:5   warning  Replace `dispatcher(shiftItemUp(index))` with `··dispatcher(shiftItemUp(index));`                          prettier/prettier
+  16:1   warning  Replace `··}` with `····};`                                                                                prettier/prettier
+  18:1   warning  Insert `··`                                                                                                prettier/prettier
+  19:1   warning  Replace `····dispatcher(excludeItem(ingredient.id))` with `······dispatcher(excludeItem(ingredient.id));`  prettier/prettier
+  20:1   warning  Replace `··}` with `····};`                                                                                prettier/prettier
+  22:3   warning  Insert `··`                                                                                                prettier/prettier
+  23:1   warning  Insert `··`                                                                                                prettier/prettier
+  24:1   warning  Replace `······` with `········`                                                                           prettier/prettier
+  25:7   warning  Insert `··`                                                                                                prettier/prettier
+  26:1   warning  Insert `··`                                                                                                prettier/prettier
+  27:7   warning  Insert `··`                                                                                                prettier/prettier
+  28:1   warning  Insert `··`                                                                                                prettier/prettier
+  29:1   warning  Replace `······` with `········`                                                                           prettier/prettier
+  30:5   warning  Insert `··`                                                                                                prettier/prettier
+  31:1   warning  Replace `··)` with `····);`                                                                                prettier/prettier
+  32:1   warning  Replace `})` with `··}⏎);`                                                                                 prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/burger-constructor/burger-constructor.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                     prettier/prettier
+   3:34  warning  Replace `"react"` with `'react';`                                                                                                                                               prettier/prettier
+   4:45  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                 prettier/prettier
+   5:37  warning  Replace `"@ui"` with `'@ui';`                                                                                                                                                   prettier/prettier
+   6:48  warning  Replace `"@store"` with `'@store';`                                                                                                                                             prettier/prettier
+   7:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                         prettier/prettier
+  13:22  warning  Delete `,`                                                                                                                                                                      prettier/prettier
+  14:8   warning  Replace `"@slices"` with `'@slices';`                                                                                                                                           prettier/prettier
+  17:34  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  18:38  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  19:59  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  20:58  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  22:51  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  23:59  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  24:57  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  27:60  warning  Replace `"/login")` with `'/login');`                                                                                                                                           prettier/prettier
+  29:46  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  31:50  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  32:80  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  33:69  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  34:50  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  36:4   warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  39:45  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  40:38  warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  41:4   warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  46:41  warning  Replace `(sum:·number,·item:·TConstructorIngredient)·=>·sum·+·item.price,·0` with `⏎········(sum:·number,·item:·TConstructorIngredient)·=>·sum·+·item.price,⏎········0⏎······`  prettier/prettier
+  47:20  warning  Delete `,`                                                                                                                                                                      prettier/prettier
+  48:4   warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  59:4   warning  Insert `;`                                                                                                                                                                      prettier/prettier
+  60:2   warning  Insert `;`                                                                                                                                                                      prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/burger-ingredient/burger-ingredient.tsx
+   1:31  warning  Replace `"react"` with `'react';`                                                                    prettier/prettier
+   2:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                              prettier/prettier
+   4:36  warning  Replace `"@ui"` with `'@ui';`                                                                        prettier/prettier
+   5:45  warning  Replace `"./type"` with `'./type';`                                                                  prettier/prettier
+   6:32  warning  Replace `"@store"` with `'@store';`                                                                  prettier/prettier
+   7:29  warning  Replace `"@slices"` with `'@slices';`                                                                prettier/prettier
+   9:66  warning  Insert `⏎··`                                                                                         prettier/prettier
+  10:1   warning  Replace `··const·currentLocation·=·useLocation()` with `····const·currentLocation·=·useLocation();`  prettier/prettier
+  11:1   warning  Replace `··const·dispatcher·=·useAppDispatch()` with `····const·dispatcher·=·useAppDispatch();`      prettier/prettier
+  13:3   warning  Insert `··`                                                                                          prettier/prettier
+  14:1   warning  Replace `····dispatcher(includeItem(ingredient))` with `······dispatcher(includeItem(ingredient));`  prettier/prettier
+  15:1   warning  Replace `··}` with `····};`                                                                          prettier/prettier
+  17:3   warning  Insert `··`                                                                                          prettier/prettier
+  18:1   warning  Insert `··`                                                                                          prettier/prettier
+  19:7   warning  Insert `··`                                                                                          prettier/prettier
+  20:7   warning  Insert `··`                                                                                          prettier/prettier
+  21:1   warning  Replace `······` with `········`                                                                     prettier/prettier
+  22:7   warning  Insert `··`                                                                                          prettier/prettier
+  23:1   warning  Replace `····` with `······`                                                                         prettier/prettier
+  24:3   warning  Replace `)` with `··);`                                                                              prettier/prettier
+  25:1   warning  Replace `})` with `··}⏎);`                                                                           prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/burger-ingredients/burger-ingredients.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                            prettier/prettier
+   3:54  warning  Replace `"react"` with `'react';`                                                                                                                                      prettier/prettier
+   4:27  warning  Replace `"react-intersection-observer"` with `'react-intersection-observer';`                                                                                          prettier/prettier
+   6:44  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                        prettier/prettier
+   7:37  warning  Replace `"../ui/burger-ingredients"` with `'../ui/burger-ingredients';`                                                                                                prettier/prettier
+   8:32  warning  Replace `"@store"` with `'@store';`                                                                                                                                    prettier/prettier
+   9:39  warning  Replace `"@slices"` with `'@slices';`                                                                                                                                  prettier/prettier
+  12:78  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  15:23  warning  Replace `"bun"` with `'bun'`                                                                                                                                           prettier/prettier
+  16:18  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  18:5   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  20:23  warning  Replace `"main"` with `'main'`                                                                                                                                         prettier/prettier
+  21:18  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  23:5   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  25:23  warning  Replace `"sauce"` with `'sauce'`                                                                                                                                       prettier/prettier
+  26:18  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  28:5   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  30:56  warning  Replace `"bun")` with `'bun');`                                                                                                                                        prettier/prettier
+  31:55  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  32:56  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  33:57  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  36:17  warning  Delete `,`                                                                                                                                                             prettier/prettier
+  37:5   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  40:17  warning  Delete `,`                                                                                                                                                             prettier/prettier
+  41:5   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  44:17  warning  Delete `,`                                                                                                                                                             prettier/prettier
+  45:5   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  49:20  warning  Replace `"bun")` with `'bun');`                                                                                                                                        prettier/prettier
+  51:20  warning  Replace `"sauce")` with `'sauce');`                                                                                                                                    prettier/prettier
+  53:20  warning  Replace `"main")` with `'main');`                                                                                                                                      prettier/prettier
+  55:43  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  58:42  warning  Insert `;`                                                                                                                                                             prettier/prettier
+  59:25  warning  Replace `"bun")·bunTitleRef.current?.scrollIntoView({·behavior:·"smooth"·})` with `'bun')⏎······bunTitleRef.current?.scrollIntoView({·behavior:·'smooth'·});`          prettier/prettier
+  60:25  warning  Replace `"main")·mainTitleRef.current?.scrollIntoView({·behavior:·"smooth"·})` with `'main')⏎······mainTitleRef.current?.scrollIntoView({·behavior:·'smooth'·});`      prettier/prettier
+  61:25  warning  Replace `"sauce")·sauceTitleRef.current?.scrollIntoView({·behavior:·"smooth"·})` with `'sauce')⏎······sauceTitleRef.current?.scrollIntoView({·behavior:·'smooth'·});`  prettier/prettier
+  62:4   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  78:4   warning  Insert `;`                                                                                                                                                             prettier/prettier
+  79:2   warning  Insert `;`                                                                                                                                                             prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/feed-info/feed-info.tsx
+   1:25  warning  Replace `"react"` with `'react';`                                                                                                                                                                                                       prettier/prettier
+   3:29  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                                                                         prettier/prettier
+   4:28  warning  Replace `"@ui"` with `'@ui';`                                                                                                                                                                                                           prettier/prettier
+   5:32  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                                                     prettier/prettier
+   6:42  warning  Replace `"@slices"` with `'@slices';`                                                                                                                                                                                                   prettier/prettier
+   8:31  warning  Replace `ordersList:·TOrder[],·orderStatus:·string` with `⏎··ordersList:·TOrder[],⏎··orderStatus:·string⏎`                                                                                                                              prettier/prettier
+  12:18  warning  Insert `;`                                                                                                                                                                                                                              prettier/prettier
+  15:63  warning  Insert `;`                                                                                                                                                                                                                              prettier/prettier
+  16:54  warning  Insert `;`                                                                                                                                                                                                                              prettier/prettier
+  17:23  warning  Replace `·total:·streamState.totalOrdersCount,·totalToday:·streamState.todayOrdersCount·}` with `⏎····total:·streamState.totalOrdersCount,⏎····totalToday:·streamState.todayOrdersCount⏎··};`                                           prettier/prettier
+  19:60  warning  Replace `"done")` with `'done');`                                                                                                                                                                                                       prettier/prettier
+  21:61  warning  Replace `"pending")` with `'pending');`                                                                                                                                                                                                 prettier/prettier
+  23:10  warning  Replace `<FeedInfoUI·readyOrders={completedOrders}·pendingOrders={processingOrders}·feed={streamData}` with `(⏎····<FeedInfoUI⏎······readyOrders={completedOrders}⏎······pendingOrders={processingOrders}⏎······feed={streamData}⏎···`  prettier/prettier
+  24:1   warning  Replace `}` with `··);⏎};`                                                                                                                                                                                                              prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/ingredient-details/ingredient-details.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                              prettier/prettier
+   3:25  warning  Replace `"react"` with `'react';`                                        prettier/prettier
+   4:27  warning  Replace `"../ui/preloader"` with `'../ui/preloader';`                    prettier/prettier
+   5:37  warning  Replace `"../ui/ingredient-details"` with `'../ui/ingredient-details';`  prettier/prettier
+   6:32  warning  Replace `"@store"` with `'@store';`                                      prettier/prettier
+   7:39  warning  Replace `"@slices"` with `'@slices';`                                    prettier/prettier
+   8:27  warning  Replace `"react-router-dom"` with `'react-router-dom';`                  prettier/prettier
+  11:32  warning  Insert `;`                                                               prettier/prettier
+  13:63  warning  Insert `;`                                                               prettier/prettier
+  14:74  warning  Insert `;`                                                               prettier/prettier
+  17:25  warning  Insert `;`                                                               prettier/prettier
+  20:63  warning  Insert `;`                                                               prettier/prettier
+  21:2   warning  Insert `;`                                                               prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/ingredients-category/ingredients-category.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                      prettier/prettier
+   3:37  warning  Replace `"react"` with `'react';`                                                                                                                                prettier/prettier
+   4:48  warning  Replace `"./type"` with `'./type';`                                                                                                                              prettier/prettier
+   5:34  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                  prettier/prettier
+   6:39  warning  Replace `"../ui/ingredients-category"` with `'../ui/ingredients-category';`                                                                                      prettier/prettier
+   7:32  warning  Replace `"@store"` with `'@store';`                                                                                                                              prettier/prettier
+   8:37  warning  Replace `"@slices"` with `'@slices';`                                                                                                                            prettier/prettier
+  10:47  warning  Replace `HTMLUListElement,·TIngredientsCategoryProps>(⏎··` with `⏎··HTMLUListElement,⏎··TIngredientsCategoryProps⏎>(`                                            prettier/prettier
+  12:3   warning  Replace `··const·builderData·=·useAppSelector(getBuilderStateInfo).selectedItems` with `const·builderData·=·useAppSelector(getBuilderStateInfo).selectedItems;`  prettier/prettier
+  14:1   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  15:1   warning  Replace `······const·{·bunItem,·fillingItems·}·=·builderData` with `····const·{·bunItem,·fillingItems·}·=·builderData;`                                          prettier/prettier
+  16:1   warning  Replace `······const·counters:·{·[key:·string]:·number·}·=·{}` with `····const·counters:·{·[key:·string]:·number·}·=·{};`                                        prettier/prettier
+  17:1   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  18:7   warning  Replace `··if·(!counters[item._id])·counters[item._id]·=·0` with `if·(!counters[item._id])·counters[item._id]·=·0;`                                              prettier/prettier
+  19:1   warning  Replace `········counters[item._id]++` with `······counters[item._id]++;`                                                                                        prettier/prettier
+  20:5   warning  Replace `··})` with `});`                                                                                                                                        prettier/prettier
+  21:1   warning  Replace `······if·(bunItem)·counters[bunItem._id]·=·2` with `····if·(bunItem)·counters[bunItem._id]·=·2;`                                                        prettier/prettier
+  22:5   warning  Replace `··return·counters` with `return·counters;`                                                                                                              prettier/prettier
+  23:3   warning  Replace `··},·[builderData])` with `},·[builderData]);`                                                                                                          prettier/prettier
+  25:3   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  26:1   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  27:1   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  28:7   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  29:1   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  30:1   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  31:7   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  32:5   warning  Delete `··`                                                                                                                                                      prettier/prettier
+  33:1   warning  Replace `····)` with `··);`                                                                                                                                      prettier/prettier
+  34:1   warning  Replace `··},⏎)` with `});`                                                                                                                                      prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/order-card/order-card.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                                        prettier/prettier
+   3:40  warning  Replace `"react"` with `'react';`                                                                                                                                                                  prettier/prettier
+   4:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                                            prettier/prettier
+   6:37  warning  Replace `"./type"` with `'./type';`                                                                                                                                                                prettier/prettier
+   7:34  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                                    prettier/prettier
+   8:29  warning  Replace `"../ui/order-card"` with `'../ui/order-card';`                                                                                                                                            prettier/prettier
+  10:32  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                prettier/prettier
+  11:39  warning  Replace `"@slices"` with `'@slices';`                                                                                                                                                              prettier/prettier
+  13:26  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  16:40  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  18:78  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  21:44  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  23:48  warning  Insert `⏎······`                                                                                                                                                                                   prettier/prettier
+  24:1   warning  Replace `······const·menuItem·=·availableItems.find((item)·=>·item._id·===·itemId)` with `········const·menuItem·=·availableItems.find((item)·=>·item._id·===·itemId);`                            prettier/prettier
+  25:1   warning  Replace `······if·(menuItem)·return·[...accumulator,·menuItem]` with `········if·(menuItem)·return·[...accumulator,·menuItem];`                                                                    prettier/prettier
+  26:1   warning  Replace `······return·accumulator` with `········return·accumulator;`                                                                                                                              prettier/prettier
+  27:1   warning  Replace `····},·[])` with `······},⏎······[]⏎····);`                                                                                                                                               prettier/prettier
+  29:75  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  31:61  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  33:27  warning  Replace `·itemsData.length·>·maxDisplayItems·?·itemsData.length·-·maxDisplayItems·:·0` with `⏎······itemsData.length·>·maxDisplayItems⏎········?·itemsData.length·-·maxDisplayItems⏎········:·0;`  prettier/prettier
+  35:48  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  42:22  warning  Delete `,`                                                                                                                                                                                         prettier/prettier
+  43:6   warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  44:30  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  46:37  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  54:4   warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  55:3   warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/order-info/order-info.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                                        prettier/prettier
+   3:45  warning  Replace `"react"` with `'react';`                                                                                                                                                                  prettier/prettier
+   4:27  warning  Replace `"../ui/preloader"` with `'../ui/preloader';`                                                                                                                                              prettier/prettier
+   5:29  warning  Replace `"../ui/order-info"` with `'../ui/order-info';`                                                                                                                                            prettier/prettier
+   6:34  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                                    prettier/prettier
+   7:27  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                                            prettier/prettier
+   8:48  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                prettier/prettier
+   9:9   warning  Replace `·loadOrderDetailsAction,·getOrderDetailsInfo,·getAvailableMenuItems·}·from·"@slices"` with `⏎··loadOrderDetailsAction,⏎··getOrderDetailsInfo,⏎··getAvailableMenuItems⏎}·from·'@slices';`  prettier/prettier
+  12:38  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  13:49  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  16:52  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  17:19  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  19:76  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  21:78  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  25:65  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  27:59  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  30:53  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  31:6   warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  33:59  warning  Insert `⏎······`                                                                                                                                                                                   prettier/prettier
+  34:1   warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  35:9   warning  Replace `const·menuItem·=·availableItems.find((item)·=>·item._id·===·itemId)` with `··const·menuItem·=·availableItems.find((item)·=>·item._id·===·itemId);`                                        prettier/prettier
+  36:1   warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  37:11  warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  38:1   warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  39:13  warning  Replace `count:·1,` with `··count:·1`                                                                                                                                                              prettier/prettier
+  40:1   warning  Replace `··········}` with `············};`                                                                                                                                                        prettier/prettier
+  41:1   warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  42:7   warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  43:1   warning  Replace `········accumulator[itemId].count++` with `··········accumulator[itemId].count++;`                                                                                                        prettier/prettier
+  44:1   warning  Insert `··`                                                                                                                                                                                        prettier/prettier
+  46:1   warning  Replace `······return·accumulator` with `········return·accumulator;`                                                                                                                              prettier/prettier
+  47:1   warning  Replace `····},·{})` with `······},⏎······{}⏎····);`                                                                                                                                               prettier/prettier
+  49:55  warning  Replace `(sum,·item)·=>·sum·+·item.price·*·item.count,·0)` with `⏎······(sum,·item)·=>·sum·+·item.price·*·item.count,⏎······0⏎····);`                                                              prettier/prettier
+  55:23  warning  Delete `,`                                                                                                                                                                                         prettier/prettier
+  56:6   warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  57:41  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  60:25  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  63:54  warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+  64:2   warning  Insert `;`                                                                                                                                                                                         prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/profile-menu/profile-menu.tsx
+   1:25  warning  Replace `"react"` with `'react';`                        prettier/prettier
+   2:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`  prettier/prettier
+   3:31  warning  Replace `"@ui"` with `'@ui';`                            prettier/prettier
+   4:32  warning  Replace `"@store"` with `'@store';`                      prettier/prettier
+   5:31  warning  Replace `"@slices"` with `'@slices';`                    prettier/prettier
+   8:38  warning  Insert `;`                                               prettier/prettier
+   9:37  warning  Insert `;`                                               prettier/prettier
+  12:32  warning  Insert `;`                                               prettier/prettier
+  13:4   warning  Insert `;`                                               prettier/prettier
+  15:80  warning  Insert `;`                                               prettier/prettier
+  16:2   warning  Insert `;`                                               prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/components/protected-route/protected-route.tsx
+   1:47  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                        prettier/prettier
+   2:32  warning  Replace `"@store"` with `'@store';`                                                                            prettier/prettier
+   3:35  warning  Replace `"@slices"` with `'@slices';`                                                                          prettier/prettier
+   6:25  warning  Insert `;`                                                                                                     prettier/prettier
+   7:2   warning  Insert `;`                                                                                                     prettier/prettier
+   9:33  warning  Replace `·forAuthorized·=·false·` with `⏎··forAuthorized·=·false⏎`                                             prettier/prettier
+  10:40  warning  Insert `;`                                                                                                     prettier/prettier
+  11:58  warning  Insert `;`                                                                                                     prettier/prettier
+  12:55  warning  Replace `"/"` with `'/';`                                                                                      prettier/prettier
+  15:42  warning  Insert `;`                                                                                                     prettier/prettier
+  19:25  warning  Replace `"/login"·state={{·from:·currentLocation·}}·/>` with `'/login'·state={{·from:·currentLocation·}}·/>;`  prettier/prettier
+  19:25  warning  Unexpected usage of doublequote                                                                                jsx-quotes
+  22:20  warning  Insert `;`                                                                                                     prettier/prettier
+  23:2   warning  Insert `;`                                                                                                     prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/index.tsx
+   1:19  warning  Replace `"react"` with `'react';`                                prettier/prettier
+   2:33  warning  Replace `"react-dom/client"` with `'react-dom/client';`          prettier/prettier
+   3:17  warning  Replace `"./components/app/app"` with `'./components/app/app';`  prettier/prettier
+   4:31  warning  Replace `"react-router-dom"` with `'react-router-dom';`          prettier/prettier
+   5:26  warning  Replace `"react-redux"` with `'react-redux';`                    prettier/prettier
+   6:22  warning  Replace `"@store"` with `'@store';`                              prettier/prettier
+   8:47  warning  Replace `"root")·as·HTMLElement` with `'root')·as·HTMLElement;`  prettier/prettier
+   9:60  warning  Insert `;`                                                       prettier/prettier
+  18:22  warning  Delete `,`                                                       prettier/prettier
+  19:2   warning  Insert `;`                                                       prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/constructor-page/constructor-page.tsx
+   1:20  warning  Replace `"./constructor-page.module.css"` with `'./constructor-page.module.css';`                                                                                                                                                                  prettier/prettier
+   3:35  warning  Replace `"@components"` with `'@components';`                                                                                                                                                                                                      prettier/prettier
+   4:35  warning  Replace `"@components"` with `'@components';`                                                                                                                                                                                                      prettier/prettier
+   5:27  warning  Replace `"@ui"` with `'@ui';`                                                                                                                                                                                                                      prettier/prettier
+   6:25  warning  Replace `"react"` with `'react';`                                                                                                                                                                                                                  prettier/prettier
+   7:32  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                                                                prettier/prettier
+   8:39  warning  Replace `"@slices"` with `'@slices';`                                                                                                                                                                                                              prettier/prettier
+  11:73  warning  Insert `;`                                                                                                                                                                                                                                         prettier/prettier
+  19:14  warning  Replace `·className={`${styles.title}·text·text_type_main-large·mt-10·mb-5·pl-5`}>Соберите·бургер` with `⏎············className={`${styles.title}·text·text_type_main-large·mt-10·mb-5·pl-5`}⏎··········>⏎············Соберите·бургер⏎··········`  prettier/prettier
+  27:4   warning  Insert `;`                                                                                                                                                                                                                                         prettier/prettier
+  28:2   warning  Insert `;`                                                                                                                                                                                                                                         prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/feed/feed.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`      prettier/prettier
+   3:27  warning  Replace `"@ui"` with `'@ui';`                    prettier/prettier
+   4:24  warning  Replace `"@ui-pages"` with `'@ui-pages';`        prettier/prettier
+   5:29  warning  Replace `"@utils-types"` with `'@utils-types';`  prettier/prettier
+   6:36  warning  Replace `"react"` with `'react';`                prettier/prettier
+   7:48  warning  Replace `"@store"` with `'@store';`              prettier/prettier
+   8:59  warning  Replace `"@slices"` with `'@slices';`            prettier/prettier
+  11:38  warning  Insert `;`                                       prettier/prettier
+  12:65  warning  Insert `;`                                       prettier/prettier
+  15:41  warning  Insert `;`                                       prettier/prettier
+  16:4   warning  Insert `;`                                       prettier/prettier
+  19:26  warning  Insert `;`                                       prettier/prettier
+  20:19  warning  Insert `;`                                       prettier/prettier
+  23:25  warning  Insert `;`                                       prettier/prettier
+  26:77  warning  Insert `;`                                       prettier/prettier
+  27:2   warning  Insert `;`                                       prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/forgot-password/forgot-password.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                                prettier/prettier
+   3:67  warning  Replace `"react"` with `'react';`                                                                                                                                                          prettier/prettier
+   4:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                                    prettier/prettier
+   6:34  warning  Replace `"@ui-pages"` with `'@ui-pages';`                                                                                                                                                  prettier/prettier
+   8:48  warning  Replace `"@store"` with `'@store';`                                                                                                                                                        prettier/prettier
+   9:9   warning  Replace `·requestPasswordResetAction,·getAccountError,·resetErrorMessage·}·from·"@slices"` with `⏎··requestPasswordResetAction,⏎··getAccountError,⏎··resetErrorMessage⏎}·from·'@slices';`  prettier/prettier
+  12:48  warning  Replace `"")` with `'');`                                                                                                                                                                  prettier/prettier
+  13:65  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  15:34  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  16:38  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  19:36  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  20:5   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  23:27  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  25:72  warning  Insert `⏎······`                                                                                                                                                                           prettier/prettier
+  26:7   warning  Insert `··`                                                                                                                                                                                prettier/prettier
+  27:9   warning  Replace `localStorage.setItem("resetPassword",·"true")` with `··localStorage.setItem('resetPassword',·'true');`                                                                            prettier/prettier
+  28:1   warning  Replace `········navigator("/reset-password",·{·replace:·true·})` with `··········navigator('/reset-password',·{·replace:·true·});`                                                        prettier/prettier
+  29:1   warning  Replace `······` with `········`                                                                                                                                                           prettier/prettier
+  30:5   warning  Replace `})` with `··}⏎····);`                                                                                                                                                             prettier/prettier
+  31:4   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  40:4   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  41:2   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/login/login.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                    prettier/prettier
+   3:67  warning  Replace `"react"` with `'react';`                                                                                                                                              prettier/prettier
+   4:25  warning  Replace `"@ui-pages"` with `'@ui-pages';`                                                                                                                                      prettier/prettier
+   5:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                        prettier/prettier
+   6:48  warning  Replace `"@store"` with `'@store';`                                                                                                                                            prettier/prettier
+   7:59  warning  Replace `"@slices"` with `'@slices';`                                                                                                                                          prettier/prettier
+  10:38  warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  11:34  warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  12:77  warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  13:48  warning  Replace `"")` with `'');`                                                                                                                                                      prettier/prettier
+  14:54  warning  Replace `"")` with `'');`                                                                                                                                                      prettier/prettier
+  17:36  warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  18:5   warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  21:27  warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  22:16  warning  Replace `authenticateUserAction({·email:·emailInput,·password:·passwordInput·}))` with `⏎······authenticateUserAction({·email:·emailInput,·password:·passwordInput·})⏎····);`  prettier/prettier
+  23:4   warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  34:4   warning  Insert `;`                                                                                                                                                                     prettier/prettier
+  35:2   warning  Insert `;`                                                                                                                                                                     prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/profile-orders/profile-orders.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`      prettier/prettier
+   3:33  warning  Replace `"@ui-pages"` with `'@ui-pages';`        prettier/prettier
+   4:29  warning  Replace `"@utils-types"` with `'@utils-types';`  prettier/prettier
+   5:36  warning  Replace `"react"` with `'react';`                prettier/prettier
+   6:48  warning  Replace `"@store"` with `'@store';`              prettier/prettier
+   7:57  warning  Replace `"@slices"` with `'@slices';`            prettier/prettier
+  10:38  warning  Insert `;`                                       prettier/prettier
+  11:69  warning  Insert `;`                                       prettier/prettier
+  14:39  warning  Insert `;`                                       prettier/prettier
+  15:19  warning  Insert `;`                                       prettier/prettier
+  17:53  warning  Insert `;`                                       prettier/prettier
+  18:2   warning  Insert `;`                                       prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/profile/profile.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                            prettier/prettier
+   3:24  warning  Replace `"react"` with `'react';`                                                                                                                      prettier/prettier
+   5:27  warning  Replace `"@ui-pages"` with `'@ui-pages';`                                                                                                              prettier/prettier
+   6:67  warning  Replace `"react"` with `'react';`                                                                                                                      prettier/prettier
+   7:48  warning  Replace `"@store"` with `'@store';`                                                                                                                    prettier/prettier
+   8:57  warning  Replace `"@slices"` with `'@slices';`                                                                                                                  prettier/prettier
+   9:28  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                        prettier/prettier
+  12:38  warning  Insert `;`                                                                                                                                             prettier/prettier
+  13:66  warning  Insert `;`                                                                                                                                             prettier/prettier
+  18:15  warning  Replace `"",` with `''`                                                                                                                                prettier/prettier
+  19:5   warning  Insert `;`                                                                                                                                             prettier/prettier
+  24:34  warning  Replace `""` with `''`                                                                                                                                 prettier/prettier
+  25:36  warning  Replace `"",` with `''`                                                                                                                                prettier/prettier
+  26:8   warning  Insert `;`                                                                                                                                             prettier/prettier
+  27:20  warning  Insert `;`                                                                                                                                             prettier/prettier
+  30:43  warning  Replace `·formData.email·!==·currentUser?.email·||·!!formData.password` with `⏎····formData.email·!==·currentUser?.email·||⏎····!!formData.password;`  prettier/prettier
+  33:27  warning  Insert `;`                                                                                                                                             prettier/prettier
+  34:4   warning  Insert `;`                                                                                                                                             prettier/prettier
+  37:27  warning  Insert `;`                                                                                                                                             prettier/prettier
+  38:46  warning  Insert `;`                                                                                                                                             prettier/prettier
+  41:17  warning  Replace `"",` with `''`                                                                                                                                prettier/prettier
+  42:7   warning  Insert `;`                                                                                                                                             prettier/prettier
+  43:4   warning  Insert `;`                                                                                                                                             prettier/prettier
+  48:46  warning  Delete `,`                                                                                                                                             prettier/prettier
+  49:8   warning  Insert `;`                                                                                                                                             prettier/prettier
+  50:4   warning  Insert `;`                                                                                                                                             prettier/prettier
+  60:4   warning  Insert `;`                                                                                                                                             prettier/prettier
+  62:14  warning  Insert `;`                                                                                                                                             prettier/prettier
+  63:2   warning  Insert `;`                                                                                                                                             prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/register/register.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                                                                            prettier/prettier
+   3:67  warning  Replace `"react"` with `'react';`                                                                                                                                                                                                      prettier/prettier
+   4:28  warning  Replace `"@ui-pages"` with `'@ui-pages';`                                                                                                                                                                                              prettier/prettier
+   5:48  warning  Replace `"@store"` with `'@store';`                                                                                                                                                                                                    prettier/prettier
+   6:9   warning  Replace `·resetErrorMessage,·createAccountAction,·getAccountError·}·from·"@slices"` with `⏎··resetErrorMessage,⏎··createAccountAction,⏎··getAccountError⏎}·from·'@slices';`                                                            prettier/prettier
+   9:38  warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  10:55  warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  11:54  warning  Replace `"")` with `'');`                                                                                                                                                                                                              prettier/prettier
+  12:48  warning  Replace `"")` with `'');`                                                                                                                                                                                                              prettier/prettier
+  13:54  warning  Replace `"")` with `'');`                                                                                                                                                                                                              prettier/prettier
+  16:27  warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  17:35  warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  18:16  warning  Replace `createAccountAction({·email:·emailInput,·name:·userName,·password:·passwordInput·}))` with `⏎······createAccountAction({⏎········email:·emailInput,⏎········name:·userName,⏎········password:·passwordInput⏎······})⏎····);`  prettier/prettier
+  19:4   warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  22:36  warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  23:5   warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  36:4   warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+  37:2   warning  Insert `;`                                                                                                                                                                                                                             prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/pages/reset-password/reset-password.tsx
+   1:1   warning  Replace `"use·client"` with `'use·client';`                                                                                                                                                prettier/prettier
+   3:67  warning  Replace `"react"` with `'react';`                                                                                                                                                          prettier/prettier
+   4:29  warning  Replace `"react-router-dom"` with `'react-router-dom';`                                                                                                                                    prettier/prettier
+   6:33  warning  Replace `"@ui-pages"` with `'@ui-pages';`                                                                                                                                                  prettier/prettier
+   8:48  warning  Replace `"@store"` with `'@store';`                                                                                                                                                        prettier/prettier
+   9:9   warning  Replace `·confirmPasswordResetAction,·getAccountError,·resetErrorMessage·}·from·"@slices"` with `⏎··confirmPasswordResetAction,⏎··getAccountError,⏎··resetErrorMessage⏎}·from·'@slices';`  prettier/prettier
+  12:34  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  13:38  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  14:54  warning  Replace `"")` with `'');`                                                                                                                                                                  prettier/prettier
+  15:48  warning  Replace `"")` with `'');`                                                                                                                                                                  prettier/prettier
+  16:65  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  19:27  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  20:16  warning  Replace `confirmPasswordResetAction({·password:·passwordInput,·token:·tokenInput·})` with `⏎······confirmPasswordResetAction({·password:·passwordInput,·token:·tokenInput·})⏎····`         prettier/prettier
+  22:33  warning  Replace `"resetPassword")` with `'resetPassword');`                                                                                                                                        prettier/prettier
+  23:19  warning  Replace `"/login")` with `'/login');`                                                                                                                                                      prettier/prettier
+  25:7   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  26:4   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  29:36  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  30:19  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  33:31  warning  Replace `"resetPassword"` with `'resetPassword'`                                                                                                                                           prettier/prettier
+  34:17  warning  Replace `"/forgot-password",·{·replace:·true·})` with `'/forgot-password',·{·replace:·true·});`                                                                                            prettier/prettier
+  36:18  warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  47:4   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+  48:2   warning  Insert `;`                                                                                                                                                                                 prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/services/store.ts
+   1:49  warning  Replace `"@reduxjs/toolkit"` with `'@reduxjs/toolkit';`                                                                                                                                                                                      prettier/prettier
+   3:28  warning  Replace `"../slices/account-slice"` with `'../slices/account-slice';`                                                                                                                                                                        prettier/prettier
+   4:33  warning  Replace `"../slices/orders-stream-slice"` with `'../slices/orders-stream-slice';`                                                                                                                                                            prettier/prettier
+   5:30  warning  Replace `"../slices/menu-items-slice"` with `'../slices/menu-items-slice';`                                                                                                                                                                  prettier/prettier
+   6:28  warning  Replace `"../slices/builder-slice"` with `'../slices/builder-slice';`                                                                                                                                                                        prettier/prettier
+   7:33  warning  Replace `"../slices/order-details-slice"` with `'../slices/order-details-slice';`                                                                                                                                                            prettier/prettier
+   9:9   warning  Replace `·type·TypedUseSelectorHook,·useDispatch·as·dispatchHook,·useSelector·as·selectorHook·}·from·"react-redux"` with `⏎··type·TypedUseSelectorHook,⏎··useDispatch·as·dispatchHook,⏎··useSelector·as·selectorHook⏎}·from·'react-redux';`  prettier/prettier
+  16:26  warning  Delete `,`                                                                                                                                                                                                                                   prettier/prettier
+  17:3   warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+  21:38  warning  Replace `"production",` with `'production'`                                                                                                                                                                                                  prettier/prettier
+  22:3   warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+  24:58  warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+  26:53  warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+  28:72  warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+  29:75  warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+  31:24  warning  Insert `;`                                                                                                                                                                                                                                   prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+    1:47  warning  Replace `"@reduxjs/toolkit"` with `'@reduxjs/toolkit';`                                                                                                                                                                                    prettier/prettier
+    9:26  warning  Delete `,`                                                                                                                                                                                                                                 prettier/prettier
+   10:8   warning  Replace `"@api"` with `'@api';`                                                                                                                                                                                                            prettier/prettier
+   11:64  warning  Replace `"@api"` with `'@api';`                                                                                                                                                                                                            prettier/prettier
+   12:28  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                                                                            prettier/prettier
+   13:43  warning  Replace `"../utils/cookie"` with `'../utils/cookie';`                                                                                                                                                                                      prettier/prettier
+   16:24  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   17:28  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   18:21  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   19:30  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   26:21  warning  Delete `,`                                                                                                                                                                                                                                 prettier/prettier
+   27:2   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   29:56  warning  Replace `"account/authenticate",·(credentials:·TAccountCredentials)·=>⏎··authenticateApi(credentials),` with `⏎··'account/authenticate',⏎··(credentials:·TAccountCredentials)·=>·authenticateApi(credentials)`                             prettier/prettier
+   31:2   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   33:53  warning  Replace `"account/create",·(registrationData:·TAccountRegistration)·=>⏎··createAccountApi(registrationData),` with `⏎··'account/create',⏎··(registrationData:·TAccountRegistration)·=>·createAccountApi(registrationData)`                 prettier/prettier
+   35:2   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   37:47  warning  Replace `"account/signOut",·signOutApi)` with `'account/signOut',·signOutApi);`                                                                                                                                                            prettier/prettier
+   39:53  warning  Replace `"account/modify",·(userData:·Partial<TAccountRegistration>)·=>⏎··modifyAccountApi(userData),` with `⏎··'account/modify',⏎··(userData:·Partial<TAccountRegistration>)·=>·modifyAccountApi(userData)`                               prettier/prettier
+   41:2   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   44:3   warning  Replace `"account/requestPasswordReset"` with `'account/requestPasswordReset'`                                                                                                                                                             prettier/prettier
+   45:71  warning  Delete `,`                                                                                                                                                                                                                                 prettier/prettier
+   46:2   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   49:3   warning  Replace `"account/confirmPasswordReset"` with `'account/confirmPasswordReset'`                                                                                                                                                             prettier/prettier
+   50:54  warning  Replace `·confirmPasswordResetApi(resetData),` with `⏎····confirmPasswordResetApi(resetData)`                                                                                                                                              prettier/prettier
+   51:2   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   53:52  warning  Replace `"account/fetch",·fetchAccountApi)` with `⏎··'account/fetch',⏎··fetchAccountApi⏎);`                                                                                                                                                prettier/prettier
+   56:9   warning  Replace `"account"` with `'account'`                                                                                                                                                                                                       prettier/prettier
+   60:32  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   61:6   warning  Delete `,`                                                                                                                                                                                                                                 prettier/prettier
+   67:51  warning  Delete `,`                                                                                                                                                                                                                                 prettier/prettier
+   72:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   73:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   76:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   77:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   80:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   81:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   82:41  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   83:31  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   84:21  warning  Replace `"accessToken",·payload.accessToken)` with `'accessToken',·payload.accessToken);`                                                                                                                                                  prettier/prettier
+   85:30  warning  Replace `"refreshToken",·payload.refreshToken)` with `'refreshToken',·payload.refreshToken);`                                                                                                                                              prettier/prettier
+   88:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   89:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   92:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   93:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   96:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   97:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   98:41  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+   99:31  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  100:21  warning  Replace `"accessToken",·payload.accessToken)` with `'accessToken',·payload.accessToken);`                                                                                                                                                  prettier/prettier
+  101:30  warning  Replace `"refreshToken",·payload.refreshToken)` with `'refreshToken',·payload.refreshToken);`                                                                                                                                              prettier/prettier
+  104:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  105:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  108:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  109:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  112:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  113:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  114:33  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  115:32  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  116:22  warning  Replace `"accessToken")` with `'accessToken');`                                                                                                                                                                                            prettier/prettier
+  117:33  warning  Replace `"refreshToken")` with `'refreshToken');`                                                                                                                                                                                          prettier/prettier
+  120:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  121:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  124:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  125:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  128:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  129:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  130:41  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  131:31  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  134:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  135:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  138:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  139:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  142:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  143:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  146:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  147:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  150:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  151:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  154:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  155:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  158:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  159:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  162:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  163:53  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  166:35  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  167:34  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  168:31  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  169:41  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  170:9   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  171:4   warning  Delete `,`                                                                                                                                                                                                                                 prettier/prettier
+  172:3   warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  174:47  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  175:58  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+  176:15  warning  Replace `·getAccountStateInfo,·getCurrentUserInfo,·checkAccessStatus,·getAccountError·}·=·accountSlice.selectors` with `⏎··getAccountStateInfo,⏎··getCurrentUserInfo,⏎··checkAccessStatus,⏎··getAccountError⏎}·=·accountSlice.selectors;`  prettier/prettier
+  178:36  warning  Insert `;`                                                                                                                                                                                                                                 prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/slices/builder-slice.ts
+    1:55  warning  Replace `"@reduxjs/toolkit"` with `'@reduxjs/toolkit';`                                                                                                                                                                                                                                prettier/prettier
+    2:53  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                                                                                                                        prettier/prettier
+    3:32  warning  Replace `"@api"` with `'@api';`                                                                                                                                                                                                                                                        prettier/prettier
+    6:24  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+    8:43  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+    9:43  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   10:4   warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   11:29  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   12:36  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   13:30  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   20:21  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   24:21  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   25:2   warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   27:51  warning  Replace `"builder/submitOrder",·(itemIds:·string[])·=>·submitOrderApi(itemIds))` with `⏎··'builder/submitOrder',⏎··(itemIds:·string[])·=>·submitOrderApi(itemIds)⏎);`                                                                                                                  prettier/prettier
+   30:9   warning  Replace `"builder"` with `'builder'`                                                                                                                                                                                                                                                   prettier/prettier
+   34:35  warning  Replace `"bun"` with `'bun'`                                                                                                                                                                                                                                                           prettier/prettier
+   35:53  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   39:23  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   40:11  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   44:41  warning  Replace `·state.selectedItems.fillingItems.filter((item)·=>·item.id·!==·action.payload)` with `⏎········state.selectedItems.fillingItems.filter(⏎··········(item)·=>·item.id·!==·action.payload⏎········);`                                                                            prettier/prettier
+   47:47  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   50:38  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   53:42  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   54:41  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   55:7   warning  Replace `;[state.selectedItems.fillingItems[currentIndex],·state.selectedItems.fillingItems[nextIndex]` with `[⏎········state.selectedItems.fillingItems[currentIndex],⏎········state.selectedItems.fillingItems[nextIndex]⏎······`                                                    prettier/prettier
+   57:55  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   58:8   warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   61:42  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   62:41  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   63:7   warning  Replace `;[state.selectedItems.fillingItems[currentIndex],·state.selectedItems.fillingItems[prevIndex]` with `[⏎········state.selectedItems.fillingItems[currentIndex],⏎········state.selectedItems.fillingItems[prevIndex]⏎······`                                                    prettier/prettier
+   65:55  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   66:8   warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   67:6   warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   70:42  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   75:34  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   76:34  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   79:35  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   80:53  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   83:35  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   84:34  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   85:40  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   86:49  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   89:27  warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   90:10  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   91:9   warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   92:4   warning  Delete `,`                                                                                                                                                                                                                                                                             prettier/prettier
+   93:3   warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   95:47  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+   96:15  warning  Replace `·includeItem,·excludeItem,·toggleOrderSubmission,·clearCompletedOrder,·shiftItemDown,·shiftItemUp·}·=⏎··builderSlice.actions` with `⏎··includeItem,⏎··excludeItem,⏎··toggleOrderSubmission,⏎··clearCompletedOrder,⏎··shiftItemDown,⏎··shiftItemUp⏎}·=·builderSlice.actions;`  prettier/prettier
+   98:62  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+  100:36  warning  Insert `;`                                                                                                                                                                                                                                                                             prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/slices/index.ts
+   1:15  warning  Replace `"./user-slice"` with `'./user-slice';`                    prettier/prettier
+   2:15  warning  Replace `"./feed-slice"` with `'./feed-slice';`                    prettier/prettier
+   3:15  warning  Replace `"./ingredients-slice"` with `'./ingredients-slice';`      prettier/prettier
+   4:15  warning  Replace `"./constructor-slice"` with `'./constructor-slice';`      prettier/prettier
+   5:15  warning  Replace `"./order-slice"` with `'./order-slice';`                  prettier/prettier
+   6:15  warning  Replace `"./account-slice"` with `'./account-slice';`              prettier/prettier
+   7:15  warning  Replace `"./orders-stream-slice"` with `'./orders-stream-slice';`  prettier/prettier
+   8:15  warning  Replace `"./menu-items-slice"` with `'./menu-items-slice';`        prettier/prettier
+   9:15  warning  Replace `"./builder-slice"` with `'./builder-slice';`              prettier/prettier
+  10:15  warning  Replace `"./order-details-slice"` with `'./order-details-slice';`  prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/slices/menu-items-slice.ts
+   1:47  warning  Replace `"@reduxjs/toolkit"` with `'@reduxjs/toolkit';`                                            prettier/prettier
+   2:35  warning  Replace `"@api"` with `'@api';`                                                                    prettier/prettier
+   3:34  warning  Replace `"@utils-types"` with `'@utils-types';`                                                    prettier/prettier
+   6:21  warning  Insert `;`                                                                                         prettier/prettier
+   7:32  warning  Insert `;`                                                                                         prettier/prettier
+   8:30  warning  Insert `;`                                                                                         prettier/prettier
+  14:21  warning  Delete `,`                                                                                         prettier/prettier
+  15:2   warning  Insert `;`                                                                                         prettier/prettier
+  17:53  warning  Replace `"menuItems/load",·fetchMenuItemsApi)` with `⏎··'menuItems/load',⏎··fetchMenuItemsApi⏎);`  prettier/prettier
+  20:9   warning  Replace `"menuItems"` with `'menuItems'`                                                           prettier/prettier
+  25:59  warning  Delete `,`                                                                                         prettier/prettier
+  30:31  warning  Insert `;`                                                                                         prettier/prettier
+  31:34  warning  Insert `;`                                                                                         prettier/prettier
+  34:32  warning  Insert `;`                                                                                         prettier/prettier
+  35:53  warning  Insert `;`                                                                                         prettier/prettier
+  38:32  warning  Insert `;`                                                                                         prettier/prettier
+  39:34  warning  Insert `;`                                                                                         prettier/prettier
+  40:39  warning  Insert `;`                                                                                         prettier/prettier
+  41:9   warning  Insert `;`                                                                                         prettier/prettier
+  42:4   warning  Delete `,`                                                                                         prettier/prettier
+  43:3   warning  Insert `;`                                                                                         prettier/prettier
+  45:49  warning  Insert `;`                                                                                         prettier/prettier
+  46:64  warning  Replace `·menuItemsSlice.selectors` with `⏎··menuItemsSlice.selectors;`                            prettier/prettier
+  48:38  warning  Insert `;`                                                                                         prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/slices/order-details-slice.ts
+   1:47  warning  Replace `"@reduxjs/toolkit"` with `'@reduxjs/toolkit';`                                                                                                                             prettier/prettier
+   2:35  warning  Replace `"@api"` with `'@api';`                                                                                                                                                     prettier/prettier
+   3:29  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                                                                     prettier/prettier
+   6:21  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+   7:30  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+   8:30  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  14:21  warning  Delete `,`                                                                                                                                                                          prettier/prettier
+  15:2   warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  17:56  warning  Replace `"orderDetails/load",·(orderNumber:·number)·=>⏎··fetchOrderByIdApi(orderNumber),` with `⏎··'orderDetails/load',⏎··(orderNumber:·number)·=>·fetchOrderByIdApi(orderNumber)`  prettier/prettier
+  19:2   warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  22:9   warning  Replace `"orderDetails"` with `'orderDetails'`                                                                                                                                      prettier/prettier
+  26:42  warning  Delete `,`                                                                                                                                                                          prettier/prettier
+  31:31  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  32:34  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  35:32  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  36:53  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  39:32  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  40:34  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  41:47  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  42:9   warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  43:4   warning  Delete `,`                                                                                                                                                                          prettier/prettier
+  44:3   warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  46:52  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  47:67  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+  49:41  warning  Insert `;`                                                                                                                                                                          prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+   1:47  warning  Replace `"@reduxjs/toolkit"` with `'@reduxjs/toolkit';`                                                                        prettier/prettier
+   2:58  warning  Replace `"@api"` with `'@api';`                                                                                                prettier/prettier
+   3:29  warning  Replace `"@utils-types"` with `'@utils-types';`                                                                                prettier/prettier
+   6:21  warning  Insert `;`                                                                                                                     prettier/prettier
+   7:23  warning  Insert `;`                                                                                                                     prettier/prettier
+   8:27  warning  Insert `;`                                                                                                                     prettier/prettier
+   9:27  warning  Insert `;`                                                                                                                     prettier/prettier
+  10:30  warning  Insert `;`                                                                                                                     prettier/prettier
+  18:21  warning  Delete `,`                                                                                                                     prettier/prettier
+  19:2   warning  Insert `;`                                                                                                                     prettier/prettier
+  21:56  warning  Replace `"ordersStream/load",·fetchOrdersStreamApi)` with `⏎··'ordersStream/load',⏎··fetchOrdersStreamApi⏎);`                  prettier/prettier
+  23:54  warning  Replace `"ordersStream/loadUserOrders",·fetchUserOrdersApi)` with `⏎··'ordersStream/loadUserOrders',⏎··fetchUserOrdersApi⏎);`  prettier/prettier
+  26:9   warning  Replace `"ordersStream"` with `'ordersStream'`                                                                                 prettier/prettier
+  31:51  warning  Delete `,`                                                                                                                     prettier/prettier
+  36:31  warning  Insert `;`                                                                                                                     prettier/prettier
+  37:34  warning  Insert `;`                                                                                                                     prettier/prettier
+  40:32  warning  Insert `;`                                                                                                                     prettier/prettier
+  41:53  warning  Insert `;`                                                                                                                     prettier/prettier
+  44:32  warning  Insert `;`                                                                                                                     prettier/prettier
+  45:34  warning  Insert `;`                                                                                                                     prettier/prettier
+  46:42  warning  Insert `;`                                                                                                                     prettier/prettier
+  47:47  warning  Insert `;`                                                                                                                     prettier/prettier
+  48:52  warning  Insert `;`                                                                                                                     prettier/prettier
+  51:31  warning  Insert `;`                                                                                                                     prettier/prettier
+  52:34  warning  Insert `;`                                                                                                                     prettier/prettier
+  55:32  warning  Insert `;`                                                                                                                     prettier/prettier
+  56:53  warning  Insert `;`                                                                                                                     prettier/prettier
+  59:32  warning  Insert `;`                                                                                                                     prettier/prettier
+  60:34  warning  Insert `;`                                                                                                                     prettier/prettier
+  61:35  warning  Insert `;`                                                                                                                     prettier/prettier
+  62:9   warning  Insert `;`                                                                                                                     prettier/prettier
+  63:4   warning  Delete `,`                                                                                                                     prettier/prettier
+  64:3   warning  Insert `;`                                                                                                                     prettier/prettier
+  66:52  warning  Insert `;`                                                                                                                     prettier/prettier
+  67:63  warning  Replace `·ordersStreamSlice.selectors` with `⏎··ordersStreamSlice.selectors;`                                                  prettier/prettier
+  69:41  warning  Insert `;`                                                                                                                     prettier/prettier
+
+/Users/zaharyan/Downloads/stellar-burgers-main/src/utils/cookie.ts
+   4:7   warning  Replace `"(?:^|;·)"` with `'(?:^|;·)'`                       prettier/prettier
+   6:56  warning  Replace `"\\$1"` with `'\\$1'`                               prettier/prettier
+   7:9   warning  Replace `"=([^;]*)",` with `'=([^;]*)'`                      prettier/prettier
+   8:6   warning  Delete `,`                                                   prettier/prettier
+   9:4   warning  Insert `;`                                                   prettier/prettier
+  10:74  warning  Insert `;`                                                   prettier/prettier
+  16:74  warning  Delete `,`                                                   prettier/prettier
+  19:11  warning  Replace `"/"` with `'/'`                                     prettier/prettier
+  20:21  warning  Delete `,`                                                   prettier/prettier
+  21:4   warning  Insert `;`                                                   prettier/prettier
+  23:45  warning  Insert `;`                                                   prettier/prettier
+  24:51  warning  Replace `"number"` with `'number'`                           prettier/prettier
+  25:35  warning  Insert `;`                                                   prettier/prettier
+  26:71  warning  Insert `;`                                                   prettier/prettier
+  27:57  warning  Insert `;`                                                   prettier/prettier
+  31:57  warning  Insert `;`                                                   prettier/prettier
+  33:48  warning  Insert `;`                                                   prettier/prettier
+  34:35  warning  Replace `"="·+·cookieValue` with `'='·+·cookieValue;`        prettier/prettier
+  36:21  warning  Replace `";·"·+·optionName` with `';·'·+·optionName;`        prettier/prettier
+  37:50  warning  Insert `;`                                                   prettier/prettier
+  39:23  warning  Replace `"="·+·optionValue` with `'='·+·optionValue;`        prettier/prettier
+  42:33  warning  Insert `;`                                                   prettier/prettier
+  46:27  warning  Replace `"",·{·expires:·-1·})` with `'',·{·expires:·-1·});`  prettier/prettier
+
+✖ 765 problems (0 errors, 765 warnings)
+  0 errors and 765 warnings potentially fixable with the `--fix` option.
+
+ERROR in ./src/utils/burger-api.ts 45:4
+Module parse failed: 'import' and 'export' may only appear at the top level (45:4)
+File was processed with these loaders:
+ * ./node_modules/ts-loader/index.js
+You may need an additional loader to handle the result of these loaders.
+|         return response.ok ? response.json() : response.json().then(function (error) { return Promise.reject(error); });
+|     };
+>     export var renewAccessToken = function () {
+|         return fetch("".concat(API_BASE_URL, "/auth/token"), {
+|             method: 'POST',
+ @ ./src/slices/builder-slice.ts 14:0-38 25:99-113
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in [eslint] 
+/Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts
+  241:0  error  Parsing error: '}' expected
+
+✖ 1 problem (1 error, 0 warnings)
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 3:2-18
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(3,3)
+      TS2305: Module '"@api"' has no exported member 'createAccountApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 4:2-17
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(4,3)
+      TS2305: Module '"@api"' has no exported member 'authenticateApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 5:2-17
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(5,3)
+      TS2305: Module '"@api"' has no exported member 'fetchAccountApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 6:2-18
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(6,3)
+      TS2305: Module '"@api"' has no exported member 'modifyAccountApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 7:2-12
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(7,3)
+      TS2305: Module '"@api"' has no exported member 'signOutApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 8:2-25
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(8,3)
+      TS2305: Module '"@api"' has no exported member 'requestPasswordResetApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 9:2-25
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(9,3)
+      TS2305: Module '"@api"' has no exported member 'confirmPasswordResetApi'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 11:14-34
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(11,15)
+      TS2305: Module '"@api"' has no exported member 'TAccountRegistration'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 11:36-55
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(11,37)
+      TS2305: Module '"@api"' has no exported member 'TAccountCredentials'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts
+./src/slices/account-slice.ts 169:28-35
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/account-slice.ts(169,29)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/services/store.ts 2:0-53 9:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/builder-slice.ts
+./src/slices/builder-slice.ts 3:9-23
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/builder-slice.ts(3,10)
+      TS2305: Module '"@api"' has no exported member 'submitOrderApi'.
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/constructor-slice.ts
+./src/slices/constructor-slice.ts 3:9-23
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/constructor-slice.ts(3,10)
+      TS2305: Module '"@api"' has no exported member 'orderBurgerApi'.
+ @ ./src/slices/index.ts 4:0-36 4:0-36
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts
+./src/slices/feed-slice.ts 2:9-20
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts(2,10)
+      TS2305: Module '"@api"' has no exported member 'getFeedsApi'.
+ @ ./src/slices/index.ts 2:0-29 2:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts
+./src/slices/feed-slice.ts 2:22-34
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts(2,23)
+      TS2305: Module '"@api"' has no exported member 'getOrdersApi'.
+ @ ./src/slices/index.ts 2:0-29 2:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts
+./src/slices/feed-slice.ts 49:23-30
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts(49,24)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/slices/index.ts 2:0-29 2:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts
+./src/slices/feed-slice.ts 50:22-29
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts(50,23)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/slices/index.ts 2:0-29 2:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts
+./src/slices/feed-slice.ts 51:27-34
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts(51,28)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/slices/index.ts 2:0-29 2:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts
+./src/slices/feed-slice.ts 64:8-20
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/feed-slice.ts(64,9)
+      TS2322: Type 'unknown' is not assignable to type 'WritableDraft<TOrder>[]'.
+ @ ./src/slices/index.ts 2:0-29 2:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/ingredients-slice.ts
+./src/slices/ingredients-slice.ts 2:9-26
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/ingredients-slice.ts(2,10)
+      TS2305: Module '"@api"' has no exported member 'getIngredientsApi'.
+ @ ./src/slices/index.ts 3:0-36 3:0-36
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/ingredients-slice.ts
+./src/slices/ingredients-slice.ts 43:8-25
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/ingredients-slice.ts(43,9)
+      TS2322: Type 'unknown' is not assignable to type 'WritableDraft<TIngredient>[]'.
+ @ ./src/slices/index.ts 3:0-36 3:0-36
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/menu-items-slice.ts
+./src/slices/menu-items-slice.ts 2:9-26
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/menu-items-slice.ts(2,10)
+      TS2305: Module '"@api"' has no exported member 'fetchMenuItemsApi'.
+ @ ./src/services/store.ts 4:0-58 12:15-31
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/menu-items-slice.ts
+./src/slices/menu-items-slice.ts 40:8-28
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/menu-items-slice.ts(40,9)
+      TS2322: Type 'unknown' is not assignable to type 'WritableDraft<TIngredient>[]'.
+ @ ./src/services/store.ts 4:0-58 12:15-31
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/order-details-slice.ts
+./src/slices/order-details-slice.ts 2:9-26
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/order-details-slice.ts(2,10)
+      TS2305: Module '"@api"' has no exported member 'fetchOrderByIdApi'.
+ @ ./src/services/store.ts 6:0-64 11:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/order-slice.ts
+./src/slices/order-slice.ts 2:9-28
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/order-slice.ts(2,10)
+      TS2305: Module '"@api"' has no exported member 'getOrderByNumberApi'.
+ @ ./src/slices/index.ts 5:0-30 5:0-30
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+./src/slices/orders-stream-slice.ts 2:9-29
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts(2,10)
+      TS2305: Module '"@api"' has no exported member 'fetchOrdersStreamApi'.
+ @ ./src/services/store.ts 3:0-64 10:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+./src/slices/orders-stream-slice.ts 2:31-49
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts(2,32)
+      TS2305: Module '"@api"' has no exported member 'fetchUserOrdersApi'.
+ @ ./src/services/store.ts 3:0-64 10:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+./src/slices/orders-stream-slice.ts 46:27-34
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts(46,28)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/services/store.ts 3:0-64 10:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+./src/slices/orders-stream-slice.ts 47:33-40
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts(47,34)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/services/store.ts 3:0-64 10:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+./src/slices/orders-stream-slice.ts 48:33-40
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts(48,34)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/services/store.ts 3:0-64 10:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts
+./src/slices/orders-stream-slice.ts 61:8-24
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/orders-stream-slice.ts(61,9)
+      TS2322: Type 'unknown' is not assignable to type 'WritableDraft<TOrder>[]'.
+ @ ./src/services/store.ts 3:0-64 10:18-37
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 3:2-17
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(3,3)
+      TS2305: Module '"@api"' has no exported member 'registerUserApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 4:2-14
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(4,3)
+      TS2305: Module '"@api"' has no exported member 'loginUserApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 5:2-12
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(5,3)
+      TS2305: Module '"@api"' has no exported member 'getUserApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 6:2-15
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(6,3)
+      TS2305: Module '"@api"' has no exported member 'updateUserApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 7:2-11
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(7,3)
+      TS2305: Module '"@api"' has no exported member 'logoutApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 8:2-14
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(8,3)
+      TS2305: Module '"@api"' has no exported member 'refreshToken'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 9:2-19
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(9,3)
+      TS2305: Module '"@api"' has no exported member 'forgotPasswordApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 10:2-18
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(10,3)
+      TS2305: Module '"@api"' has no exported member 'resetPasswordApi'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 12:14-27
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(12,15)
+      TS2305: Module '"@api"' has no exported member 'TRegisterData'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 12:29-39
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(12,30)
+      TS2305: Module '"@api"' has no exported member 'TLoginData'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 14:9-21
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(14,10)
+      TS2305: Module '"../utils/cookie"' has no exported member 'deleteCookie'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 14:23-32
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(14,24)
+      TS2305: Module '"../utils/cookie"' has no exported member 'setCookie'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts
+./src/slices/user-slice.ts 173:21-28
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/slices/user-slice.ts(173,22)
+      TS18046: 'payload' is of type 'unknown'.
+ @ ./src/slices/index.ts 1:0-29 1:0-29
+ @ ./src/components/app/app.tsx 8:0-87 16:43-62 19:19-37 20:19-38
+ @ ./src/index.tsx 4:0-39 10:133-136
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts
+./src/utils/burger-api.ts 241:0
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts(241,1)
+      TS1005: '}' expected.
+ @ ./src/slices/builder-slice.ts 14:0-38 25:99-113
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts
+./src/utils/burger-api.ts 98:13-101:20
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts(98,14)
+      TS2352: Conversion of type '{ 'Content-Type': string; authorization: void; }' to type 'HeadersInit' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ 'Content-Type': string; authorization: void; }' is not comparable to type 'Record<string, string>'.
+    Property 'authorization' is incompatible with index signature.
+      Type 'void' is not comparable to type 'string'.
+ @ ./src/slices/builder-slice.ts 14:0-38 25:99-113
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts
+./src/utils/burger-api.ts 115:13-118:20
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts(115,14)
+      TS2352: Conversion of type '{ 'Content-Type': string; authorization: void; }' to type 'HeadersInit' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ 'Content-Type': string; authorization: void; }' is not comparable to type 'Record<string, string>'.
+    Property 'authorization' is incompatible with index signature.
+      Type 'void' is not comparable to type 'string'.
+ @ ./src/slices/builder-slice.ts 14:0-38 25:99-113
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts
+./src/utils/burger-api.ts 216:13-218:20
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts(216,14)
+      TS2352: Conversion of type '{ authorization: void; }' to type 'HeadersInit' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ authorization: void; }' is not comparable to type 'Record<string, string>'.
+    Property 'authorization' is incompatible with index signature.
+      Type 'void' is not comparable to type 'string'.
+ @ ./src/slices/builder-slice.ts 14:0-38 25:99-113
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts
+./src/utils/burger-api.ts 224:13-227:20
+[tsl] ERROR in /Users/zaharyan/Downloads/stellar-burgers-main/src/utils/burger-api.ts(224,14)
+      TS2352: Conversion of type '{ 'Content-Type': string; authorization: void; }' to type 'HeadersInit' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ 'Content-Type': string; authorization: void; }' is not comparable to type 'Record<string, string>'.
+    Property 'authorization' is incompatible with index signature.
+      Type 'void' is not comparable to type 'string'.
+ @ ./src/slices/builder-slice.ts 14:0-38 25:99-113
+ @ ./src/services/store.ts 5:0-53 13:13-27
+ @ ./src/index.tsx 7:0-30 10:76-84
+
+48 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.89.0 compiled with 50 errors and 4 warnings in 3076 ms

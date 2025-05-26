@@ -1,3 +1,5 @@
+'use client';
+
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import {
   ConstructorPage,
@@ -20,31 +22,31 @@ import {
   ProtectedRoute,
   Center
 } from '@components';
-import { useDispatch } from '@store';
+import { useAppDispatch } from '@store';
 import {
-  getIngredientsThunk,
-  getUserStateSelector,
-  getUserThunk
+  loadMenuItemsAction,
+  getAccountStateInfo,
+  fetchAccountAction
 } from '@slices';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@store';
 
 const App = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const dispatch = useDispatch();
-  const userLoading = useSelector(getUserStateSelector).isLoadong;
-  const backgroundLocation = location.state?.background;
+  const navigator = useNavigate();
+  const currentLocation = useLocation();
+  const dispatcher = useAppDispatch();
+  const accountProcessing = useAppSelector(getAccountStateInfo).isProcessing;
+  const backgroundLocation = currentLocation.state?.background;
 
   useEffect(() => {
-    dispatch(getUserThunk());
-    dispatch(getIngredientsThunk());
-  }, [dispatch]);
+    dispatcher(fetchAccountAction());
+    dispatcher(loadMenuItemsAction());
+  }, [dispatcher]);
 
   return (
     <div className={styles.app}>
       <AppHeader />
-      <Routes location={backgroundLocation || location}>
+      <Routes location={backgroundLocation || currentLocation}>
         <Route path='/' element={<ConstructorPage />} />
         <Route
           path='/ingredients/:id'
@@ -58,7 +60,7 @@ const App = () => {
         <Route
           path='/feed/:number'
           element={
-            <Center title={`#${location.pathname.match(/\d+/)}`}>
+            <Center title={`#${currentLocation.pathname.match(/\d+/)}`}>
               <OrderInfo />
             </Center>
           }
@@ -76,7 +78,7 @@ const App = () => {
             <Route
               path='orders/:number'
               element={
-                <Center title={`#${location.pathname.match(/\d+/)}`}>
+                <Center title={`#${currentLocation.pathname.match(/\d+/)}`}>
                   <OrderInfo />
                 </Center>
               }
@@ -91,9 +93,9 @@ const App = () => {
             path='/feed/:number'
             element={
               <Modal
-                title={`#${location.pathname.match(/\d+/)}`}
+                title={`#${currentLocation.pathname.match(/\d+/)}`}
                 onClose={() => {
-                  navigate(-1);
+                  navigator(-1);
                 }}
               >
                 <OrderInfo />
@@ -106,7 +108,7 @@ const App = () => {
               <Modal
                 title={`Детали ингредиента`}
                 onClose={() => {
-                  navigate(-1);
+                  navigator(-1);
                 }}
               >
                 <IngredientDetails />
@@ -118,9 +120,9 @@ const App = () => {
               path='/profile/orders/:number'
               element={
                 <Modal
-                  title={`#${location.pathname.match(/\d+/)}`}
+                  title={`#${currentLocation.pathname.match(/\d+/)}`}
                   onClose={() => {
-                    navigate('/profile/orders');
+                    navigator('/profile/orders');
                   }}
                 >
                   <OrderInfo />

@@ -3,22 +3,64 @@ import { storeCookie, retrieveCookie } from './cookie';
 
 const API_BASE_URL = process.env.BURGER_API_URL;
 
-const validateResponse = <T>(response: Response): Promise<T> =>
-  response.ok
-    ? response.json()
-    : response.json().then((error) => Promise.reject(error));
+const checkResponse = <T>(response: Response): Promise<T> => {
+  if (response.ok) {
+    return response.json();
+  }
+  return response.json().then((error) => Promise.reject(error));
+};
 
-type TApiResponse<T> = {
+const checkSuccess = <T>(data: T & { success: boolean }): Promise<T> => {
+  if (data?.success) {
+    return Promise.resolve(data);
+  }
+  return Promise.reject(data);
+};
+
+const request = async <T>(
+  endpoint: string,
+  options: RequestInit = {}
+): Promise<T> => {
+  const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
+  const data = await checkResponse<T & { success: boolean }>(response);
+  return checkSuccess(data);
+};
+
+const requestWithTokenRenewal = async <T>(
+  endpoint: string,
+  options: RequestInit = {}
+): Promise<T> => {
+  try {
+    return await request<T>(endpoint, {
+      ...options,
+      headers: {
+        ...options.headers,
+        authorization: retrieveCookie('accessToken') || ''
+      } as HeadersInit
+    });
+  } catch (error) {
+    if ((error as { message: string }).message === 'jwt expired') {
+      const tokenData = await renewAccessToken();
+      return request<T>(endpoint, {
+        ...options,
+        headers: {
+          ...options.headers,
+          authorization: tokenData.accessToken
+        } as HeadersInit
+      });
+    }
+    return Promise.reject(error);
+  }
+};
+
+type TTokenRefreshResponse = {
   success: boolean;
-} & T;
-
-type TTokenRefreshResponse = TApiResponse<{
   refreshToken: string;
   accessToken: string;
-}>;
+};
 
 export const renewAccessToken = (): Promise<TTokenRefreshResponse> =>
-  fetch(`${API_BASE_URL}/auth/token`, {
+  request<TTokenRefreshResponse>('/auth/token', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -26,108 +68,59 @@ export const renewAccessToken = (): Promise<TTokenRefreshResponse> =>
     body: JSON.stringify({
       token: localStorage.getItem('refreshToken')
     })
-  })
-    .then((response) => validateResponse<TTokenRefreshResponse>(response))
-    .then((tokenData) => {
-      if (!tokenData.success) {
-        return Promise.reject(tokenData);
-      }
-      localStorage.setItem('refreshToken', tokenData.refreshToken);
-      storeCookie('accessToken', tokenData.accessToken);
-      return tokenData;
-    });
+  }).then((tokenData) => {
+    localStorage.setItem('refreshToken', tokenData.refreshToken);
+    storeCookie('accessToken', tokenData.accessToken);
+    return tokenData;
+  });
 
-export const requestWithTokenRenewal = async <T>(
-  endpoint: RequestInfo,
-  requestOptions: RequestInit
-) => {
-  try {
-    const response = await fetch(endpoint, requestOptions);
-    return await validateResponse<T>(response);
-  } catch (error) {
-    if ((error as { message: string }).message === 'jwt expired') {
-      const tokenData = await renewAccessToken();
-      if (requestOptions.headers) {
-        (requestOptions.headers as { [key: string]: string }).authorization =
-          tokenData.accessToken;
-      }
-      const response = await fetch(endpoint, requestOptions);
-      return await validateResponse<T>(response);
-    } else {
-      return Promise.reject(error);
-    }
-  }
+type TMenuItemsResponse = {
+  success: boolean;
+  data: TIngredient[];
 };
 
-type TMenuItemsResponse = TApiResponse<{
-  data: TIngredient[];
-}>;
+export const fetchMenuItemsApi = () =>
+  request<TMenuItemsResponse>('/ingredients').then((data) => data.data);
 
-type TOrdersStreamResponse = TApiResponse<{
+type TOrdersStreamResponse = {
+  success: boolean;
   orders: TOrder[];
   total: number;
   totalToday: number;
-}>;
-
-export const fetchMenuItemsApi = () =>
-  fetch(`${API_BASE_URL}/ingredients`)
-    .then((response) => validateResponse<TMenuItemsResponse>(response))
-    .then((data) => {
-      if (data?.success) return data.data;
-      return Promise.reject(data);
-    });
+};
 
 export const fetchOrdersStreamApi = () =>
-  fetch(`${API_BASE_URL}/orders/all`)
-    .then((response) => validateResponse<TOrdersStreamResponse>(response))
-    .then((data) => {
-      if (data?.success) return data;
-      return Promise.reject(data);
-    });
+  request<TOrdersStreamResponse>('/orders/all');
 
 export const fetchUserOrdersApi = () =>
-  requestWithTokenRenewal<TOrdersStreamResponse>(`${API_BASE_URL}/orders`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      authorization: retrieveCookie('accessToken') || ''
-    } as HeadersInit
-  }).then((data) => {
-    if (data?.success) return data.orders;
-    return Promise.reject(data);
-  });
+  requestWithTokenRenewal<TOrdersStreamResponse>('/orders').then(
+    (data) => data.orders
+  );
 
-type TOrderSubmissionResponse = TApiResponse<{
+type TOrderSubmissionResponse = {
+  success: boolean;
   order: TOrder;
   name: string;
-}>;
+};
 
 export const submitOrderApi = (itemIds: string[]) =>
-  requestWithTokenRenewal<TOrderSubmissionResponse>(`${API_BASE_URL}/orders`, {
+  requestWithTokenRenewal<TOrderSubmissionResponse>('/orders', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      authorization: retrieveCookie('accessToken') || ''
-    } as HeadersInit,
+      'Content-Type': 'application/json;charset=utf-8'
+    },
     body: JSON.stringify({
       ingredients: itemIds
     })
-  }).then((data) => {
-    if (data?.success) return data;
-    return Promise.reject(data);
   });
 
-type TOrderDetailsResponse = TApiResponse<{
+type TOrderDetailsResponse = {
+  success: boolean;
   orders: TOrder[];
-}>;
+};
 
 export const fetchOrderByIdApi = (orderNumber: number) =>
-  fetch(`${API_BASE_URL}/orders/${orderNumber}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }).then((response) => validateResponse<TOrderDetailsResponse>(response));
+  request<TOrderDetailsResponse>(`/orders/${orderNumber}`);
 
 export type TAccountRegistration = {
   email: string;
@@ -135,25 +128,21 @@ export type TAccountRegistration = {
   password: string;
 };
 
-type TAuthenticationResponse = TApiResponse<{
+type TAuthenticationResponse = {
+  success: boolean;
   refreshToken: string;
   accessToken: string;
   user: TUser;
-}>;
+};
 
 export const createAccountApi = (registrationData: TAccountRegistration) =>
-  fetch(`${API_BASE_URL}/auth/register`, {
+  request<TAuthenticationResponse>('/auth/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(registrationData)
-  })
-    .then((response) => validateResponse<TAuthenticationResponse>(response))
-    .then((data) => {
-      if (data?.success) return data;
-      return Promise.reject(data);
-    });
+  });
 
 export type TAccountCredentials = {
   email: string;
@@ -161,71 +150,54 @@ export type TAccountCredentials = {
 };
 
 export const authenticateApi = (credentials: TAccountCredentials) =>
-  fetch(`${API_BASE_URL}/auth/login`, {
+  request<TAuthenticationResponse>('/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(credentials)
-  })
-    .then((response) => validateResponse<TAuthenticationResponse>(response))
-    .then((data) => {
-      if (data?.success) return data;
-      return Promise.reject(data);
-    });
+  });
 
 export const requestPasswordResetApi = (emailData: { email: string }) =>
-  fetch(`${API_BASE_URL}/password-reset`, {
+  request<{ success: boolean }>('/password-reset', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(emailData)
-  })
-    .then((response) => validateResponse<TApiResponse<{}>>(response))
-    .then((data) => {
-      if (data?.success) return data;
-      return Promise.reject(data);
-    });
+  });
 
 export const confirmPasswordResetApi = (resetData: {
   password: string;
   token: string;
 }) =>
-  fetch(`${API_BASE_URL}/password-reset/reset`, {
+  request<{ success: boolean }>('/password-reset/reset', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(resetData)
-  })
-    .then((response) => validateResponse<TApiResponse<{}>>(response))
-    .then((data) => {
-      if (data?.success) return data;
-      return Promise.reject(data);
-    });
-
-type TAccountResponse = TApiResponse<{ user: TUser }>;
-
-export const fetchAccountApi = () =>
-  requestWithTokenRenewal<TAccountResponse>(`${API_BASE_URL}/auth/user`, {
-    headers: {
-      authorization: retrieveCookie('accessToken') || ''
-    } as HeadersInit
   });
 
+type TAccountResponse = {
+  success: boolean;
+  user: TUser;
+};
+
+export const fetchAccountApi = () =>
+  requestWithTokenRenewal<TAccountResponse>('/auth/user');
+
 export const modifyAccountApi = (userData: Partial<TAccountRegistration>) =>
-  requestWithTokenRenewal<TAccountResponse>(`${API_BASE_URL}/auth/user`, {
+  requestWithTokenRenewal<TAccountResponse>('/auth/user', {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      authorization: retrieveCookie('accessToken') || ''
-    } as HeadersInit,
+      'Content-Type': 'application/json;charset=utf-8'
+    },
     body: JSON.stringify(userData)
   });
 
 export const signOutApi = () =>
-  fetch(`${API_BASE_URL}/auth/logout`, {
+  request<{ success: boolean }>('/auth/logout', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -233,4 +205,4 @@ export const signOutApi = () =>
     body: JSON.stringify({
       token: localStorage.getItem('refreshToken')
     })
-  }).then((response) => validateResponse<TApiResponse<{}>>(response));
+  });

@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import { SELECTORS } from '../support/selectors';
 
 describe("Burger Constructor", () => {
   beforeEach(() => {
@@ -22,8 +23,8 @@ describe("Burger Constructor", () => {
       })
 
       // Проверяем, что булка добавилась в конструктор
-      cy.getByCy("constructor").within(() => {
-        cy.getByCy("constructor-bun").should("exist")
+      cy.get(SELECTORS.CONSTRUCTOR).within(() => {
+        cy.get(SELECTORS.CONSTRUCTOR_BUN).should("exist")
         cy.contains("Краторная булка N-200i").should("exist")
       })
     })
@@ -35,8 +36,8 @@ describe("Burger Constructor", () => {
       })
 
       // Проверяем, что ингредиент добавился
-      cy.getByCy("constructor").within(() => {
-        cy.getByCy("constructor-ingredient").should("exist")
+      cy.get(SELECTORS.CONSTRUCTOR).within(() => {
+        cy.get(SELECTORS.CONSTRUCTOR_INGREDIENT).should("exist")
       })
     })
 
@@ -47,8 +48,8 @@ describe("Burger Constructor", () => {
       })
 
       // Проверяем, что соус добавился
-      cy.getByCy("constructor").within(() => {
-        cy.getByCy("constructor-ingredient").should("exist")
+      cy.get(SELECTORS.CONSTRUCTOR).within(() => {
+        cy.get(SELECTORS.CONSTRUCTOR_INGREDIENT).should("exist")
         cy.contains("Соус Spicy-X").should("exist")
       })
     })
@@ -57,21 +58,21 @@ describe("Burger Constructor", () => {
   describe("Ingredient modal functionality", () => {
     it("should open ingredient modal on click", () => {
       // Кликаем на ингредиент
-      cy.getByCy("ingredient-item").first().click()
+      cy.get(SELECTORS.INGREDIENT_ITEM).first().click()
 
       // Проверяем, что модальное окно открылось
-      cy.getByCy("modal").should("be.visible")
+      cy.get(SELECTORS.MODAL).should("be.visible")
       cy.contains("Детали ингредиента").should("be.visible")
     })
 
     it("should display correct ingredient data in modal", () => {
       // Кликаем на конкретный ингредиент
       cy.getByCy("Булки").within(() => {
-        cy.getByCy("ingredient-item").first().click()
+        cy.get(SELECTORS.INGREDIENT_ITEM).first().click()
       })
 
       // Проверяем данные в модальном окне
-      cy.getByCy("modal").within(() => {
+      cy.get(SELECTORS.MODAL).within(() => {
         cy.contains("Краторная булка N-200i").should("be.visible")
         cy.contains("420").should("be.visible") // калории
         cy.contains("80").should("be.visible") // белки
@@ -82,22 +83,22 @@ describe("Burger Constructor", () => {
 
     it("should close modal on close button click", () => {
       // Открываем модальное окно
-      cy.getByCy("ingredient-item").first().click()
-      cy.getByCy("modal").should("be.visible")
+      cy.get(SELECTORS.INGREDIENT_ITEM).first().click()
+      cy.get(SELECTORS.MODAL).should("be.visible")
 
       // Закрываем по кнопке
-      cy.getByCy("modal-close").click()
-      cy.getByCy("modal").should("not.exist")
+      cy.get(SELECTORS.MODAL_CLOSE).click()
+      cy.get(SELECTORS.MODAL).should("not.exist")
     })
 
     it("should close modal on overlay click", () => {
       // Открываем модальное окно
-      cy.getByCy("ingredient-item").first().click()
-      cy.getByCy("modal").should("be.visible")
+      cy.get(SELECTORS.INGREDIENT_ITEM).first().click()
+      cy.get(SELECTORS.MODAL).should("be.visible")
 
       // Закрываем по клику на оверлей
-      cy.getByCy("modal-overlay").click({ force: true })
-      cy.getByCy("modal").should("not.exist")
+      cy.get(SELECTORS.MODAL_OVERLAY).click({ force: true })
+      cy.get(SELECTORS.MODAL).should("not.exist")
     })
   })
 
@@ -135,16 +136,16 @@ describe("Burger Constructor", () => {
       cy.wait("@createOrder")
 
       // Проверяем, что модальное окно с номером заказа открылось
-      cy.getByCy("modal").should("be.visible")
+      cy.get(SELECTORS.MODAL).should("be.visible")
       cy.contains("12345").should("be.visible")
       cy.contains("идентификатор заказа").should("be.visible")
 
       // Закрываем модальное окно
-      cy.getByCy("modal-close").click()
-      cy.getByCy("modal").should("not.exist")
+      cy.get(SELECTORS.MODAL_CLOSE).click()
+      cy.get(SELECTORS.MODAL).should("not.exist")
 
       // Проверяем, что конструктор очистился
-      cy.getByCy("constructor").within(() => {
+      cy.get(SELECTORS.CONSTRUCTOR).within(() => {
         cy.contains("Выберите булки").should("be.visible")
         cy.contains("Выберите начинку").should("be.visible")
       })

@@ -1,15 +1,18 @@
-import { type FC, type SyntheticEvent, useState, useEffect } from 'react';
+import { type FC, type SyntheticEvent, useEffect } from 'react';
 import { LoginUI } from '@ui-pages';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@store';
 import { authenticateUserAction, resetErrorMessage } from '@slices';
+import { useForm } from '@hooks';
 
 export const Login: FC = () => {
   const dispatcher = useAppDispatch();
   const navigator = useNavigate();
   const errorMessage = useAppSelector((state) => state.account.errorMessage);
-  const [emailInput, setEmailInput] = useState('');
-  const [passwordInput, setPasswordInput] = useState('');
+  const { values, handleChange } = useForm({
+    email: '',
+    password: ''
+  });
 
   useEffect(() => {
     dispatcher(resetErrorMessage());
@@ -18,17 +21,28 @@ export const Login: FC = () => {
   const handleFormSubmission = (event: SyntheticEvent) => {
     event.preventDefault();
     dispatcher(
-      authenticateUserAction({ email: emailInput, password: passwordInput })
+      authenticateUserAction({
+        email: values.email,
+        password: values.password
+      })
     );
   };
 
   return (
     <LoginUI
       errorText={errorMessage?.toString()}
-      email={emailInput}
-      setEmail={setEmailInput}
-      password={passwordInput}
-      setPassword={setPasswordInput}
+      email={values.email}
+      setEmail={(value) =>
+        handleChange({
+          target: { name: 'email', value }
+        } as React.ChangeEvent<HTMLInputElement>)
+      }
+      password={values.password}
+      setPassword={(value) =>
+        handleChange({
+          target: { name: 'password', value }
+        } as React.ChangeEvent<HTMLInputElement>)
+      }
       handleSubmit={handleFormSubmission}
     />
   );

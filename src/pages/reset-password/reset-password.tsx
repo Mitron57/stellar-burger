@@ -1,40 +1,52 @@
-import { FC, SyntheticEvent, useEffect, useState } from 'react';
+import { type FC, type SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { resetPasswordApi } from '@api';
 import { ResetPasswordUI } from '@ui-pages';
 
-export const ResetPassword: FC = () => {
-  const navigate = useNavigate();
-  const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
-  const [error, setError] = useState<Error | null>(null);
+import { useAppSelector, useAppDispatch } from '@store';
+import {
+  confirmPasswordResetAction,
+  getAccountError,
+  resetErrorMessage
+} from '@slices';
 
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    setError(null);
-    resetPasswordApi({ password, token })
-      .then(() => {
+export const ResetPassword: FC = () => {
+  const navigator = useNavigate();
+  const dispatcher = useAppDispatch();
+  const [passwordInput, setPasswordInput] = useState('');
+  const [tokenInput, setTokenInput] = useState('');
+  const errorMessage = useAppSelector(getAccountError) as string;
+
+  const handleFormSubmission = (event: SyntheticEvent) => {
+    event.preventDefault();
+    dispatcher(
+      confirmPasswordResetAction({ password: passwordInput, token: tokenInput })
+    ).then((result) => {
+      if (result.payload) {
         localStorage.removeItem('resetPassword');
-        navigate('/login');
-      })
-      .catch((err) => setError(err));
+        navigator('/login');
+      }
+    });
   };
 
   useEffect(() => {
+    dispatcher(resetErrorMessage());
+  }, [dispatcher]);
+
+  useEffect(() => {
     if (!localStorage.getItem('resetPassword')) {
-      navigate('/forgot-password', { replace: true });
+      navigator('/forgot-password', { replace: true });
     }
-  }, [navigate]);
+  }, [navigator]);
 
   return (
     <ResetPasswordUI
-      errorText={error?.message}
-      password={password}
-      token={token}
-      setPassword={setPassword}
-      setToken={setToken}
-      handleSubmit={handleSubmit}
+      errorText={errorMessage}
+      password={passwordInput}
+      token={tokenInput}
+      setPassword={setPasswordInput}
+      setToken={setTokenInput}
+      handleSubmit={handleFormSubmission}
     />
   );
 };

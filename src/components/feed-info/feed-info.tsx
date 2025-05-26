@@ -1,28 +1,36 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { TOrder } from '@utils-types';
-import { FeedInfoUI } from '../ui/feed-info';
+import type { TOrder } from '@utils-types';
+import { FeedInfoUI } from '@ui';
+import { useAppSelector } from '@store';
+import { getOrdersStreamStateInfo } from '@slices';
 
-const getOrders = (orders: TOrder[], status: string): number[] =>
-  orders
-    .filter((item) => item.status === status)
-    .map((item) => item.number)
+const filterOrdersByStatus = (
+  ordersList: TOrder[],
+  orderStatus: string
+): number[] =>
+  ordersList
+    .filter((order) => order.status === orderStatus)
+    .map((order) => order.number)
     .slice(0, 20);
 
 export const FeedInfo: FC = () => {
-  /** TODO: взять переменные из стора */
-  const orders: TOrder[] = [];
-  const feed = {};
+  const streamState = useAppSelector(getOrdersStreamStateInfo);
+  const ordersList: TOrder[] = streamState.ordersList;
+  const streamData = {
+    total: streamState.totalOrdersCount,
+    totalToday: streamState.todayOrdersCount
+  };
 
-  const readyOrders = getOrders(orders, 'done');
+  const completedOrders = filterOrdersByStatus(ordersList, 'done');
 
-  const pendingOrders = getOrders(orders, 'pending');
+  const processingOrders = filterOrdersByStatus(ordersList, 'pending');
 
   return (
     <FeedInfoUI
-      readyOrders={readyOrders}
-      pendingOrders={pendingOrders}
-      feed={feed}
+      readyOrders={completedOrders}
+      pendingOrders={processingOrders}
+      feed={streamData}
     />
   );
 };

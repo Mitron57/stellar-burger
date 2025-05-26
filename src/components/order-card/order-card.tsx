@@ -1,57 +1,59 @@
-import { FC, memo, useMemo } from 'react';
+import { type FC, memo, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { OrderCardProps } from './type';
-import { TIngredient } from '@utils-types';
+import type { OrderCardProps } from './type';
+import type { TIngredient } from '@utils-types';
 import { OrderCardUI } from '../ui/order-card';
 
-const maxIngredients = 6;
+import { useAppSelector } from '@store';
+import { getAvailableMenuItems } from '@slices';
+
+const maxDisplayItems = 6;
 
 export const OrderCard: FC<OrderCardProps> = memo(({ order }) => {
-  const location = useLocation();
+  const currentLocation = useLocation();
 
-  /** TODO: взять переменную из стора */
-  const ingredients: TIngredient[] = [];
+  const availableItems: TIngredient[] = useAppSelector(getAvailableMenuItems);
 
-  const orderInfo = useMemo(() => {
-    if (!ingredients.length) return null;
+  const orderDisplayData = useMemo(() => {
+    if (!availableItems.length) return null;
 
-    const ingredientsInfo = order.ingredients.reduce(
-      (acc: TIngredient[], item: string) => {
-        const ingredient = ingredients.find((ing) => ing._id === item);
-        if (ingredient) return [...acc, ingredient];
-        return acc;
+    const itemsData = order.ingredients.reduce(
+      (accumulator: TIngredient[], itemId: string) => {
+        const menuItem = availableItems.find((item) => item._id === itemId);
+        if (menuItem) return [...accumulator, menuItem];
+        return accumulator;
       },
       []
     );
 
-    const total = ingredientsInfo.reduce((acc, item) => acc + item.price, 0);
+    const totalCost = itemsData.reduce((sum, item) => sum + item.price, 0);
 
-    const ingredientsToShow = ingredientsInfo.slice(0, maxIngredients);
+    const displayItems = itemsData.slice(0, maxDisplayItems);
 
-    const remains =
-      ingredientsInfo.length > maxIngredients
-        ? ingredientsInfo.length - maxIngredients
+    const remainingCount =
+      itemsData.length > maxDisplayItems
+        ? itemsData.length - maxDisplayItems
         : 0;
 
-    const date = new Date(order.createdAt);
+    const orderDate = new Date(order.createdAt);
     return {
       ...order,
-      ingredientsInfo,
-      ingredientsToShow,
-      remains,
-      total,
-      date
+      ingredientsInfo: itemsData,
+      ingredientsToShow: displayItems,
+      remains: remainingCount,
+      total: totalCost,
+      date: orderDate
     };
-  }, [order, ingredients]);
+  }, [order, availableItems]);
 
-  if (!orderInfo) return null;
+  if (!orderDisplayData) return null;
 
   return (
     <OrderCardUI
-      orderInfo={orderInfo}
-      maxIngredients={maxIngredients}
-      locationState={{ background: location }}
+      orderInfo={orderDisplayData}
+      maxIngredients={maxDisplayItems}
+      locationState={{ background: currentLocation }}
     />
   );
 });

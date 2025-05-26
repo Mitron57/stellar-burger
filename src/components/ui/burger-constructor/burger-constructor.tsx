@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
 import {
   Button,
   ConstructorElement,
   CurrencyIcon
 } from '@zlden/react-developer-burger-ui-components';
 import styles from './burger-constructor.module.css';
-import { BurgerConstructorUIProps } from './type';
-import { TConstructorIngredient } from '@utils-types';
+import type { BurgerConstructorUIProps } from './type';
+import type { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorElement, Modal } from '@components';
 import { Preloader, OrderDetailsUI } from '@ui';
 
@@ -18,9 +18,9 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
   onOrderClick,
   closeOrderModal
 }) => (
-  <section className={styles.burger_constructor}>
+  <section className={styles.burger_constructor} data-cy='constructor'>
     {constructorItems.bun ? (
-      <div className={`${styles.element} mb-4 mr-4`}>
+      <div className={`${styles.element} mb-4 mr-4`} data-cy='constructor-bun'>
         <ConstructorElement
           type='top'
           isLocked
@@ -45,6 +45,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
               index={index}
               totalItems={constructorItems.ingredients.length}
               key={item.id}
+              data-cy='constructor-ingredient'
             />
           )
         )
@@ -57,7 +58,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
       )}
     </ul>
     {constructorItems.bun ? (
-      <div className={`${styles.element} mt-4 mr-4`}>
+      <div className={`${styles.element} mt-4 mr-4`} data-cy='constructor-bun'>
         <ConstructorElement
           type='bottom'
           isLocked

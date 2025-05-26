@@ -1,67 +1,72 @@
-import { FC, useMemo } from 'react';
+import { type FC, useMemo, useEffect } from 'react';
 import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
-import { TIngredient } from '@utils-types';
+import type { TIngredient } from '@utils-types';
+import { useParams } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '@store';
+import {
+  loadOrderDetailsAction,
+  getOrderDetailsInfo,
+  getAvailableMenuItems
+} from '@slices';
 
 export const OrderInfo: FC = () => {
-  /** TODO: взять переменные orderData и ingredients из стора */
-  const orderData = {
-    createdAt: '',
-    ingredients: [],
-    _id: '',
-    status: '',
-    name: '',
-    updatedAt: 'string',
-    number: 0
-  };
+  const dispatcher = useAppDispatch();
+  const orderNumber = Number(useParams().number);
 
-  const ingredients: TIngredient[] = [];
+  useEffect(() => {
+    dispatcher(loadOrderDetailsAction(orderNumber));
+  }, [dispatcher]);
 
-  /* Готовим данные для отображения */
-  const orderInfo = useMemo(() => {
-    if (!orderData || !ingredients.length) return null;
+  const orderDetailsData = useAppSelector(getOrderDetailsInfo).currentOrder;
 
-    const date = new Date(orderData.createdAt);
+  const availableItems: TIngredient[] = useAppSelector(getAvailableMenuItems);
 
-    type TIngredientsWithCount = {
+  /* Подготавливаем данные для отображения */
+  const orderDisplayInfo = useMemo(() => {
+    if (!orderDetailsData || !availableItems.length) return null;
+
+    const orderDate = new Date(orderDetailsData.createdAt);
+
+    type TItemsWithCount = {
       [key: string]: TIngredient & { count: number };
     };
 
-    const ingredientsInfo = orderData.ingredients.reduce(
-      (acc: TIngredientsWithCount, item) => {
-        if (!acc[item]) {
-          const ingredient = ingredients.find((ing) => ing._id === item);
-          if (ingredient) {
-            acc[item] = {
-              ...ingredient,
+    const itemsInfo = orderDetailsData.ingredients.reduce(
+      (accumulator: TItemsWithCount, itemId) => {
+        if (!accumulator[itemId]) {
+          const menuItem = availableItems.find((item) => item._id === itemId);
+          if (menuItem) {
+            accumulator[itemId] = {
+              ...menuItem,
               count: 1
             };
           }
         } else {
-          acc[item].count++;
+          accumulator[itemId].count++;
         }
 
-        return acc;
+        return accumulator;
       },
       {}
     );
 
-    const total = Object.values(ingredientsInfo).reduce(
-      (acc, item) => acc + item.price * item.count,
+    const totalCost = Object.values(itemsInfo).reduce(
+      (sum, item) => sum + item.price * item.count,
       0
     );
 
     return {
-      ...orderData,
-      ingredientsInfo,
-      date,
-      total
+      ...orderDetailsData,
+      ingredientsInfo: itemsInfo,
+      date: orderDate,
+      total: totalCost
     };
-  }, [orderData, ingredients]);
+  }, [orderDetailsData, availableItems]);
 
-  if (!orderInfo) {
+  if (!orderDisplayInfo) {
     return <Preloader />;
   }
 
-  return <OrderInfoUI orderInfo={orderInfo} />;
+  return <OrderInfoUI orderInfo={orderDisplayInfo} />;
 };

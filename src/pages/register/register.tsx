@@ -1,5 +1,3 @@
-'use client';
-
 import { type FC, type SyntheticEvent, useState, useEffect } from 'react';
 import { RegisterUI } from '@ui-pages';
 import { useAppDispatch, useAppSelector } from '@store';

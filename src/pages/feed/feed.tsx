@@ -1,5 +1,3 @@
-'use client';
-
 import { Preloader } from '@ui';
 import { FeedUI } from '@ui-pages';
 import type { TOrder } from '@utils-types';

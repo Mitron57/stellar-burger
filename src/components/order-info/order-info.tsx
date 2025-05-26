@@ -1,5 +1,3 @@
-'use client';
-
 import { type FC, useMemo, useEffect } from 'react';
 import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';

@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useRef, useEffect, type FC } from 'react';
 import { useInView } from 'react-intersection-observer';
 

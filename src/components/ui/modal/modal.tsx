@@ -1,5 +1,3 @@
-'use client';
-
 import { type FC, memo } from 'react';
 
 import styles from './modal.module.css';

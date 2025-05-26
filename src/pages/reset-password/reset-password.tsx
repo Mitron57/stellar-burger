@@ -1,5 +1,3 @@
-'use client';
-
 import { type FC, type SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

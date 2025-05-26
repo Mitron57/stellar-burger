@@ -1,5 +1,3 @@
-'use client';
-
 import type { FC } from 'react';
 import { Preloader } from '../ui/preloader';
 import { IngredientDetailsUI } from '../ui/ingredient-details';

@@ -1,5 +1,3 @@
-'use client';
-
 import type React from 'react';
 
 import { ProfileUI } from '@ui-pages';

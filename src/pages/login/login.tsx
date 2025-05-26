@@ -1,5 +1,3 @@
-'use client';
-
 import { type FC, type SyntheticEvent, useState, useEffect } from 'react';
 import { LoginUI } from '@ui-pages';
 import { useNavigate } from 'react-router-dom';

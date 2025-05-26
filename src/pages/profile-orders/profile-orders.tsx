@@ -1,5 +1,3 @@
-'use client';
-
 import { ProfileOrdersUI } from '@ui-pages';
 import type { TOrder } from '@utils-types';
 import { type FC, useEffect } from 'react';

@@ -1,5 +1,3 @@
-'use client';
-
 import { forwardRef, useMemo } from 'react';
 import type { TIngredientsCategoryProps } from './type';
 import type { TIngredient } from '@utils-types';

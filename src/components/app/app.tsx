@@ -1,5 +1,3 @@
-'use client';
-
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import {
   ConstructorPage,

@@ -1,5 +1,3 @@
-'use client';
-
 import { type FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './burger-ingredient.module.css';

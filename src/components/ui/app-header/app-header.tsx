@@ -32,6 +32,7 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => (
         <Link
           to='/'
           style={{ textDecoration: 'none', color: 'inherit', display: 'flex' }}
+          data-cy='logo'
         >
           <Logo className='' />
         </Link>

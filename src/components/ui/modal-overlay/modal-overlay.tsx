@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './modal-overlay.module.css';
 
 export const ModalOverlayUI = ({ onClick }: { onClick: () => void }) => (

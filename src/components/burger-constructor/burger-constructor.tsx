@@ -7,7 +7,8 @@ import {
   getBuilderStateInfo,
   submitOrderAction,
   clearCompletedOrder,
-  checkAccessStatus
+  checkAccessStatus,
+  toggleOrderSubmission
 } from '../../slices';
 
 export const BurgerConstructor: FC = () => {
@@ -33,6 +34,7 @@ export const BurgerConstructor: FC = () => {
       ),
       selectedItems.bunItem._id
     ];
+    dispatcher(toggleOrderSubmission(true));
     dispatcher(submitOrderAction(orderItemIds));
   };
 

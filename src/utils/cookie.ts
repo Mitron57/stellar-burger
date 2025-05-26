@@ -1,14 +1,13 @@
-export function retrieveCookie(cookieName: string): string | undefined {
-  const cookieMatches = document.cookie.match(
+export const retrieveCookie = (name: string): string | null => {
+  const matches = document.cookie.match(
     new RegExp(
       '(?:^|; )' +
-        // eslint-disable-next-line no-useless-escape
-        cookieName.replace(/([.$?*|{}$$$$[\]\\/+^])/g, '\\$1') +
+        name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
         '=([^;]*)'
     )
   );
-  return cookieMatches ? decodeURIComponent(cookieMatches[1]) : undefined;
-}
+  return matches ? decodeURIComponent(matches[1]) : null;
+};
 
 export function storeCookie(
   cookieName: string,

@@ -70,7 +70,15 @@ export const accountSlice = createSlice({
   selectors: {
     getAccountStateInfo: (state) => state,
     getCurrentUserInfo: (state) => state.currentUser,
-    checkAccessStatus: (state) => state.hasAccess,
+    checkAccessStatus: (state: any) => {
+      if (typeof state.hasAccess === 'boolean') {
+        return state.hasAccess;
+      }
+      if (state.account && typeof state.account.hasAccess === 'boolean') {
+        return state.account.hasAccess;
+      }
+      return false;
+    },
     getAccountError: (state) => state.errorMessage
   },
   extraReducers: (builder) => {
